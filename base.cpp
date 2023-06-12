@@ -12,14 +12,14 @@ void power();
 void gravity();
 void friction_force();
 void elastic_force();
-void sila_toka();
+void current_strength();
 void pressure();
 void pressure_in_liquds();
 void SI_categories();
 void gidravlical();
 void Communicating_Vessels();
 void archimed();
-void Density_splava();
+void alloy_density();
 void potential_energy();
 void kinetic_energy();
 void elastic_deform();
@@ -59,7 +59,7 @@ int main() {
             elastic_force();
         } else if (main_task == "8") {
             cout << "Your choice is: 'сила тока'" << endl;
-            sila_toka();
+            current_strength();
         } else if (main_task == "9") {
             cout << "Your choice is: 'Давление'" << endl;
             pressure();
@@ -80,7 +80,7 @@ int main() {
             archimed();
         } else if (main_task == "15") {
             cout << "Your choice is: 'плотность сплава'" << endl;
-            Density_splava();
+            alloy_density();
         } else if (main_task == "16") {
             cout << "Your choice is: 'Потенциальная энергия'" << endl;
             potential_energy();
@@ -99,6 +99,7 @@ int main() {
     return 0;
 }
 
+//Function for solving tasks about mechanical work
 void mechanical_work() {
     float A, N, t, F, V;
     string unknown;
@@ -127,7 +128,7 @@ void mechanical_work() {
         cout << "Error" << endl;
     }
 }
-// Define function for solving density
+// Define function for solving tasks about density
 void density() {
     float ro, m, v;
     string formula;
@@ -157,8 +158,8 @@ void density() {
         cout << "Error" << endl;
     }
 }
-
-void Density_splava () {
+//Define a func that provide me to solve tasks with alloy density
+void alloy_density () {
     float m1, m2, v1, v2;
     cout << "Enter m1(кг): ";
     cin >> m1;
@@ -170,7 +171,7 @@ void Density_splava () {
     cin >> v2;
     cout << "Analysis: ρсп = (m1 + m2):(v1 + v2)\nAnswer is: ρсп = " << (m1 + m2)/(v1 + v2) << "кг/м3" << endl;
 }
-
+// The same thing with upper examples
 void inertia () {
     string formula;
     float m1, m2, v1, v2;
@@ -325,7 +326,7 @@ void friction_force () {
         cout << "Enter N(H): " << endl;
         cin >> N;
         float res = F/N;
-        if (res > 1) {
+        if (res > 1) {                                                                              //This block of "if-else" compares values to normal
             cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << endl;
         } else if (res < 0) {
             cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << endl;
@@ -376,7 +377,7 @@ void elastic_force () {
 
 }
 
-void sila_toka () {
+void current_strength () {
     string ques, formula;
     float U, I, P, R;
 
@@ -531,6 +532,7 @@ void pressure () {
     }
 }
 
+//converts any length to the one you need
 void length () {
     string SI;
     float km, m, cm, mm;
@@ -580,6 +582,7 @@ void length () {
     }
 }
 
+//converts any time to the one you need
 void time () {
     string SI_time;
     float seconds, minutes, hours;
@@ -620,7 +623,8 @@ void time () {
         cout << "Error" << endl;
     }
 }
-//Define a mass function;
+//Define a mass function
+//Converts any mass to the one you need
 void mass () {
     string SI_mass;
     float kg, gramms;
@@ -643,6 +647,7 @@ void mass () {
 }
 
 //Define a temp function;
+//converts any temprature to the one you need
 void temprature () {
     string SI_temprature;
     float celsius, farengeit, kelvin;
@@ -679,6 +684,7 @@ void temprature () {
 }
 
 //Define a speed function;
+//converts any speed to the one you need
 void speed () {
     string SI_speed;
     float kmph, mps;
@@ -701,6 +707,7 @@ void speed () {
 }
 
 //Define a volume function;
+//converts any volume to the one you need
 void volume () {
     string SI_volume;
     float cm3, m3;
@@ -721,6 +728,7 @@ void volume () {
     }
 }
 
+//Uses upper functions to convert values to SI
 void SI_categories () {
     string SI, categories;
     float km, m, cm;
@@ -1006,7 +1014,7 @@ void law_of_energy_conservation() {
     float Ek, Ep, Em, V, h, m, g;
     cout << "Enter unknown parameter: ";
     cin >> unknown;
-    if (unknown == "Em")
+    if (unknown == "Em")                         //This block of "if-else" asking your known values
     {
         cout << "Do you know Ek and Ep?(y/n): ";
         cin >> yes_or_no;
