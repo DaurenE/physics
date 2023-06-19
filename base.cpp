@@ -29,7 +29,7 @@ int main() {
     while (true) {
         string main_task;
 
-        cout << "Введите тип задачи:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
+        cout << "Введите тип задачи\nНапишите 'stop' для завершения:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
         cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19";
         cin >> main_task;
 
@@ -93,6 +93,8 @@ int main() {
         } else if (main_task == "19") {
             cout << "Your choice is: 'Закон сохранения энергии'" << endl;
             law_of_energy_conservation();
+        } else if (main_task == "stop") {
+            break;
         }
         cout << "\n" << endl;
     }
@@ -1009,45 +1011,46 @@ void kinetic_energy() {
     }
 }
 
+
 void law_of_energy_conservation() {
     string unknown, yes_or_no;
-    float Ek, Ep, Em, V, h, m, g;
+    double Ek, Ep, Em, V, h, m, g;
+
     cout << "Enter unknown parameter: ";
     cin >> unknown;
-    if (unknown == "Em")                         //This block of "if-else" asking your known values
-    {
-        cout << "Do you know Ek and Ep?(y/n): ";
+
+    if (unknown == "Em") {
+        cout << "Do you know Ek and Ep? (y/n): ";
         cin >> yes_or_no;
-        if (yes_or_no == "y")
-        {
-            cout << "Enter Ek(Дж): ";
+
+        if (yes_or_no == "y") {
+            cout << "Enter Ek (Дж): ";
             cin >> Ek;
-            cout << "Enter Ep(Дж): ";
+            cout << "Enter Ep (Дж): ";
             cin >> Ep;
-            cout << "Analysis: Em = Ek + Ep\nAnwer is Em = " << Ek + Ep << "[Дж]" << endl;
-        } else if (yes_or_no == "n")
-        {
-            cout << "There is kinetic energy" << endl;
+            Em = Ek + Ep;
+            cout << "Analysis: Em = Ek + Ep\nAnswer is Em = " << Em << "[Дж]\n";
+        } else if (yes_or_no == "n") {
+            cout << "There is kinetic energy\n";
             kinetic_energy();
-            cout << '\n' << "There is potential energy" << endl;
+            cout << '\n' << "There is potential energy\n";
             potential_energy();
         }
-    } else if (unknown == "V")
-    {
-        cout << "Enter h(м): ";
+    } else if (unknown == "V") {
+        cout << "Enter h (m): ";
         cin >> h;
         cout << "Enter g: ";
         cin >> g;
-        cout << "Analysis: √2gh\nAnwer is V = " << sqrt(2*g*h) << "[м/с]" << endl;
-    } else if (unknown == "h")
-    {
-        cout << "Enter V(м/с): ";
+        V = sqrt(2 * g * h);
+        cout << "Analysis: √2gh\nAnswer is V = " << V << "[м/с]\n";
+    } else if (unknown == "h") {
+        cout << "Enter V (m/s): ";
         cin >> V;
         cout << "Enter g: ";
         cin >> g;
-        cout << "Analysis: h = V^2/2g\nAnswer is h = " << pow(V, 2)/2*g << "[м]" << endl;
-    } else
-    {
-        cout << "There is a mistake" << endl;
+        h = pow(V, 2) / (2 * g);
+        cout << "Analysis: h = V^2/2g\nAnswer is h = " << h << "[m]\n";
+    } else {
+        cout << "There is a mistake\n";
     }
-}
+}    
