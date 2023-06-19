@@ -103,33 +103,38 @@ int main() {
 
 //Function for solving tasks about mechanical work
 void mechanical_work() {
-    float A, N, t, F, V;
+    float A, N, t;
     string unknown;
 
-    cout << "Enter unknown value: " << endl;
+    cout << "Enter unknown value: ";
     cin >> unknown;
+
     if (unknown == "A") {
-        cout << "Enter N: " << endl;
+        cout << "Enter N: ";
         cin >> N;
-        cout << "Enter t: " << endl;
+        cout << "Enter t: ";
         cin >> t;
-        cout << "A = " << N/t << endl;
+        A = N / t;
+        cout << "A = " << A << endl;
     } else if (unknown == "N") {
-        cout << "Enter A: " << endl;
+        cout << "Enter A: ";
         cin >> A;
-        cout << "Enter t: " << endl;
+        cout << "Enter t: ";
         cin >> t;
-        cout << "N = " << A/t << endl;
+        N = A * t;
+        cout << "N = " << N << endl;
     } else if (unknown == "t") {
-        cout << "Enter A: " << endl;
+        cout << "Enter A: ";
         cin >> A;
-        cout << "Enter N: " << endl;
+        cout << "Enter N: ";
         cin >> N;
-        cout << "t = " << N/A << endl;
+        t = N / A;
+        cout << "t = " << t << endl;
     } else {
         cout << "Error" << endl;
     }
 }
+
 // Define function for solving tasks about density
 void density() {
     float ro, m, v;
