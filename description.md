@@ -10,13 +10,13 @@
    - Windows и Android
 # Стек технологий
    - Back-end:
-         * Java
+     * Java
    - Front-end:
-         * HTML
-         * CSS
+     * HTML
+     * CSS
    - Server:
-         * C++
-         * DB SQL
+     * C++
+     * DB SQL
 # Требования к дизайну
    - Минимализм, лаконичность
    - цвета: #5c5c5c, #ffffff, #040212
