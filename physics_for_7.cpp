@@ -216,36 +216,20 @@ void inertia () {
     cin >> formula;
 
     if (formula == "m1") {
-        cout << "Enter m2(кг): " << endl;
-        cin >> m2;
-        cout << "Enter v1(м/с): " << endl;
-        cin >> v1;
-        cout << "Enter v2(м/с): " << endl;
-        cin >> v2;
+        cout << "Enter m2(кг), v1(м/с), v2(м/с): \n";
+        cin >> m2 >> v1 >> v2;
         cout << "m1 = " << m2*v2/v1 << endl;
     } else if (formula == "m2") {
-        cout << "Enter m1(кг): " << endl;
-        cin >> m1;
-        cout << "Enter v1(м/с): " << endl;
-        cin >> v1;
-        cout << "Enter v2(м/с): " << endl;
-        cin >> v2;
-        cout << "m2 = " << m1*v1/v2 << endl;
+        cout << "Enter m1(кг), v1(м/с), v2(м/с): \n";
+        cin >> m1 >> v1 >> v2;
+        cout << "m2 = " << m1*v1/v2 << "\n";
     } else if (formula == "v1") {
-        cout << "Enter m2(кг): " << endl;
-        cin >> m2;
-        cout << "Enter v2(м/с): " << endl;
-        cin >> v2;
-        cout << "Enter m1(кг): " << endl;
-        cin >> m1;
+        cout << "Enter m2(кг), v2(м/с), m1(кг): \n";
+        cin >> m2 >> v2 >> m1;
         cout << "v1 = " << m2*v2/m1 << endl;
     } else if (formula == "v2") {
-        cout << "Enter m1(кг): " << endl;
-        cin >> m1;
-        cout << "Enter v1(м/с): " << endl;
-        cin >> v1;
-        cout << "Enter m2(кг): " << endl;
-        cin >> m2;
+        cout << "Enter m1(кг), v1(м/с), m2(кг): " << endl;
+        cin >> m1 >> v1 >> m2;
         cout << "v2 = " << m1*v1/m2 << endl;
     } else {
         cout << "Error" << endl;
@@ -275,7 +259,7 @@ void average_speed () {
         cout << "Analysis: S1 + S2/t1 + t2" << endl;
         cout << "Answer is: " << (S1+S2)/(t1+t2) << endl;
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << "\n";
     }
 }
 
@@ -285,38 +269,28 @@ void power () {
     cout << "Enter unknown parameter: ";
     cin >> formula;
     if (formula == "N") {
-        cout << "Enter A(Дж): " << endl;
-        cin >> A;
-        cout << "Enter t(сек): " << endl;
-        cin >> t;
-        cout << "Analysis: N = A / t" << endl;
-        cout << "Answer is:\nN = " << A / t << endl;
+        cout << "Enter A(Дж), t(сек): \n";
+        cin >> A >> t;
+        cout << "Analysis: N = A / t\n";
+        cout << "Answer is:\nN = " << A / t << "\n";
     } else if (formula == "A") {
-        cout << "Enter N(Вт): " << endl;
-        cin >> N;
-        cout << "Enter t(сек): " << endl;
-        cin >> t;
-        cout << "Analysis: A = N・t\nAnswer is: A = " << N*t << endl;
+        cout << "Enter N(Вт), t(сек): \n";
+        cin >> N >> t;
+        cout << "Analysis: A = N・t\nAnswer is: A = " << N*t << "\n";
     } else if (formula == "t") {
-        cout << "Enter N(Вт): " << endl;
-        cin >> N;
-        cout << "Enter A(Дж): " << endl;
-        cin >> A;
-        cout << "Analysis: t = A/N\nAnswer is: t = " << A/N << endl;
+        cout << "Enter N(Вт), A(Дж): \n";
+        cin >> N >> A;
+        cout << "Analysis: t = A/N\nAnswer is: t = " << A/N << "\n";
     } else if (formula == "V") {
-        cout << "Enter F: " << endl;
-        cin >> F;
-        cout << "Enter N: " << endl;
-        cin >> N;
-        cout << "Analysis: V = N/F\nAnswer is: V = " << N/F << endl;
+        cout << "Enter F(H), N(Вт): \n";
+        cin >> F >> N;
+        cout << "Analysis: V = N/F\nAnswer is: V = " << N/F << "\n";
     } else if (formula == "F") {
-        cout << "Enter N: " << endl;
-        cin >> N;
-        cout << "Enter V: " << endl;
-        cin >> V;
-        cout << "Analysis: F = N/V\nAnswer is: F = " << N/V << endl;
+        cout << "Enter N(Вт), V(м/с): \n";
+        cin >> N >> V;
+        cout << "Analysis: F = N/V\nAnswer is: F = " << N/V << "\n";
     } else {
-        cout << "*Error*" << endl;
+        cout << "*Error*" << "\n";
     }
 }
 
@@ -843,54 +817,37 @@ void gidravlical () {
 
     cout << "Enter unknown parameter: ";
     cin >> F_input;
+
     if (F_input == "F2") {
-        cout << "Enter F1: ";
-        cin >> F1;
-        cout << "Enter S1: ";
-        cin >> S1;
-        cout << "Enter S2: ";
-        cin >> S2;
-        cout << "Analysis: F2 = F1・S1:S2\nAnswer is: F2 = " << F1*S1/S2 << "H" << endl;
+        cout << "Enter F1, S1, S2: ";
+        cin >> F1 >> S1 >> S2;
+        cout << "Analysis: F2 = F1 * S1 / S2" << endl;
+        cout << "Answer is: F2 = " << F1 * S1 / S2 << "H" << endl;
     } else if (F_input == "F1") {
-        cout << "Enter F2: ";
-        cin >> F2;
-        cout << "Enter S2: ";
-        cin >> S2;
-        cout << "Enter S1: ";
-        cin >> S1;
-        cout << "Analysis: F1 = F2・S2:S1\nAnswer is: F1 = " << F2*S2/S1 << "H" << endl;
+        cout << "Enter F2, S1, S2: ";
+        cin >> F2 >> S1 >> S2;
+        cout << "Analysis: F1 = F2 * S2 / S1" << endl;
+        cout << "Answer is: F1 = " << F2 * S2 / S1 << "H" << endl;
     } else if (F_input == "S1") {
-        cout << "Enter F1: ";
-        cin >> F1;
-        cout << "Enter F2: ";
-        cin >> F2;
-        cout << "Enter S2: ";
-        cin >> S2;
-        cout << "Analysis: S1 = F2・S2:F1\nAnswer is: S1 = " << F2*S2/F1 << "м2" << endl;
+        cout << "Enter F1, F2, S2: ";
+        cin >> F1 >> F2 >> S2;
+        cout << "Analysis: S1 = F2 * S2 / F1" << endl;
+        cout << "Answer is: S1 = " << F2 * S2 / F1 << "м2" << endl;
     } else if (F_input == "S2") {
-        cout << "Enter F1: ";
-        cin >> F1;
-        cout << "Enter F2: ";
-        cin >> F2;
-        cout << "Enter S1: ";
-        cin >> S1;
-        cout << "Analysis: S2 = F1・S1:F2\nAnswer is: S2 = " << F1*S1/F2 << "м2" << endl;
+        cout << "Enter F1, F2, S1: ";
+        cin >> F1 >> F2 >> S1;
+        cout << "Analysis: S2 = F1 * S1 / F2" << endl;
+        cout << "Answer is: S2 = " << F1 * S1 / F2 << "м2" << endl;
     } else if (F_input == "h1") {
-        cout << "Enter F1: ";
-        cin >> F1;
-        cout << "Enter h2: ";
-        cin >> h2;
-        cout << "Enter F2: ";
-        cin >> F2;
-        cout << "Analysis: h1 = F2・h2:F1\nAnswer is: h1 = " << F2*h2/F1 << "м" << endl;
+        cout << "Enter F1, h2, F2: ";
+        cin >> F1 >> h2 >> F2;
+        cout << "Analysis: h1 = F2 * h2 / F1" << endl;
+        cout << "Answer is: h1 = " << F2 * h2 / F1 << "м" << endl;
     } else if (F_input == "h2") {
-        cout << "Enter F1: ";
-        cin >> F1;
-        cout << "Enter F2: ";
-        cin >> F2;
-        cout << "Enter h1: ";
-        cin >> h1;
-        cout << "Analysis: h2 = F1・h1:F2\nAnwer is: h2 = " << F1*h1/F2 << "м" << endl;
+        cout << "Enter F1, F2, h1: ";
+        cin >> F1 >> F2 >> h1;
+        cout << "Analysis: h2 = F1 * h1 / F2" << endl;
+        cout << "Answer is: h2 = " << F1 * h1 / F2 << "м" << endl;
     } else {
         cout << "5o5" << endl;
     }
@@ -904,36 +861,20 @@ void Communicating_Vessels () {
     cout << "Enter unknown parameter: ";
     cin >> unknown;
     if (unknown == "p1") {
-        cout << "Enter h2: ";
-        cin >> h2;
-        cout << "Enter p2: ";
-        cin >> p2;
-        cout << "Enter h1: ";
-        cin >> h1;
+        cout << "Enter h2, p2, h1: ";
+        cin >> h2 >> p2 >> h1;
         cout << "Analysis: p1 = h2・p2:h1\nAnswer is: p1 = " << h2*p2/h1 << endl;
     } else if (unknown == "p2") {
-        cout << "Enter p1: ";
-        cin >> p1;
-        cout << "Enter h1: ";
-        cin >> h1;
-        cout << "Enter h2: ";
-        cin >> h2;
+        cout << "Enter p1, h2, h1: ";
+        cin >> p1 >> h2 >> h1;
         cout << "Analysis: p2 = p1・h1:h2\nAnswer is: p2 = " << p1*h1/h2 << endl;
     } else if (unknown == "h2") {
-        cout << "Enter p1: ";
-        cin >> p1;
-        cout << "Enter p2: ";
-        cin >> p2;
-        cout << "Enter h1: ";
-        cin >> h1;
+        cout << "Enter p1, p2, h1: ";
+        cin >> p1 >> p2 >> h1;
         cout << "Analysis: h2 = p1・h1:p2\nAnswer is: h2 = " << p1*h1/h2 << endl;
     } else if (unknown == "h1") {
-        cout << "Enter p1: ";
-        cin >> p1;
-        cout << "Enter p2: ";
-        cin >> p2;
-        cout << "Enter h2: ";
-        cin >> h2;
+        cout << "Enter p1, p2, h2: ";
+        cin >> p1 >> p2 >> h2;
         cout << "Analysis: h1 = p2・h2:p1\nAnswer is: h1 = " << p2*h2/p1 << endl;
     } else {
         cout << "Something get wrong" << endl;
@@ -1003,29 +944,25 @@ void elastic_deform() {
     float k, x, Ep;
     cout << "Enter unknown parameter: ";
     cin >> unknown;
-    if (unknown == "Ep")
-    {
+    if (unknown == "Ep") {
         cout << "Enter k(H/м): ";
         cin >> k;
         cout << "Enter △x(см): ";
         cin >> x;
         cout << "Analysis: Ep = k△x^2/2\nAnswer is Ep = " << (k*pow(x, 2))/2 << "[Дж]" << endl;
-    } else if (unknown == "k")
-    {
+    } else if (unknown == "k") {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter △x(см): ";
         cin >> x;
         cout << "Analysis: k = 2・Ep/△x^2\nAnswer is k = " << 2*Ep/pow(x, 2) << "[H/м]" << endl;
-    } else if (unknown == "x")
-    {
+    } else if (unknown == "x") {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter k(H/м): ";
         cin >> k;
         cout << "Analysis: △x = √2・Ep/k\nAnswer is △x = " << sqrt(2*Ep/k) << "[см]" << endl;
-    } else
-    {
+    } else {
         cout << "you made a mistake in one parameter" << endl;
     }
 }
@@ -1035,29 +972,25 @@ void kinetic_energy() {
     float m, V, Ek;
     cout << "Enter unknown parameter: ";
     cin >> not_given;
-    if (not_given == "Ek")
-    {
+    if (not_given == "Ek") {
         cout << "Enter m(кг): ";
         cin >> m;
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Analysis: Ek = m・V^2/2\nAnswer is Ek = " << (m*pow(V, 2))/2 << "[Дж]" << endl;
-    } else if (not_given == "m")
-    {
+    } else if (not_given == "m") {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Analysis: m = 2・Ek/V^2\nAnswer is m = " << 2*Ek/pow(V, 2) << "[кг]" << endl;
-    } else if (not_given == "V")
-    {
+    } else if (not_given == "V") {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter m(кг): ";
         cin >> m;
         cout << "Analysis: V = 2・Ek/m\nAnswer is V = " << sqrt(2*Ek/m) << "[м/c]" << endl;
-    } else
-    {
+    } else {
         cout << "There is a mistake" << endl;
     }
 }
