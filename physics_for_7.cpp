@@ -30,16 +30,14 @@ int main() {
     cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19:  ";
     while (true) {
         string main_task;
-        cout << "Enter the task number (0-19) or 'stop' to exit: ";
+        cout << "Введите номер задачи от 0 до 19 или 'stop' для завершения: ";
         cin >> main_task;
         cout << endl;
 
         if (main_task == "stop") {
             break;
         }
-
         cout << "Your choice is: ";
-
         switch (stoi(main_task)) {
             case 0:
                 cout << "'плотность'" << endl;
@@ -128,9 +126,6 @@ int main() {
 
         cout << "\n" << endl;
 }
-
-return 0;
-
     return 0;
 }
 
