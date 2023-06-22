@@ -30,7 +30,7 @@ int main() {
         string main_task;
 
         cout << "Введите тип задачи\nНапишите 'stop' для завершения:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
-        cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19";
+        cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19: ";
         cin >> main_task;
 
         if (main_task == "0") {
@@ -384,127 +384,144 @@ void elastic_force () {
 
 }
 
-void current_strength () {
-    string ques, formula;
-    float U, I, P, R;
 
+void U_func () {
+    float U, I, P, R;
+    string ques;
+    cout << "What is unknown" << endl;
+    cin >> ques;
+    if (ques == "I") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float U1 = P*R;
+        float U2 = sqrt (U1);
+        cout << "U = " << U2 << endl;
+    } else if (ques == "P") {
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float U_2 = I*R;
+        cout << "U = " << U_2 << endl;
+    } else if (ques == "R") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        float U_3 = P/I;
+        cout << "U = " << U_3 << endl;
+    } else {
+        cout << "Enter right value" << endl;
+    }
+}
+void I_func () {
+    float U, I, P, R;
+    cout << "What is unknown" << endl;
+    string quesI;
+    cin >> quesI;
+    if (quesI == "U") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float I1 = P/R;
+        float ans = sqrt (I1);
+        cout << "I = " << ans << endl;
+    } else if (quesI == "P") {
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float I_2 = U/R;
+        cout << "I = " << I_2 << endl;
+    } else if (quesI == "R") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        float I_3 = P/U;
+        cout << "I = " << I_3 << endl;
+    } else {
+        cout << "Error" << endl;
+    }
+}
+
+void R_func () {
+    float U, I, P, R;
+    string quesR;
+    cout << "What is unknown: ";
+    cin >> quesR;
+    if (quesR == "U") {
+        cout << "Enter P(Вт): ";
+        cin >> P;
+        cout << "Enter I(A): ";
+        cin >> I;
+        float R1 = pow(I, 2);
+        cout << "R = " << P/R1 << endl;
+    } else if (quesR == "P") {
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        float R_2 = U/I;
+        cout << "R = " << R_2 << endl;
+    } else if (quesR == "I") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        float RI = pow(U, 2);
+        cout << "R = " << RI/P << endl;
+    } else {
+        cout << "Sorry" << endl;
+    }
+}
+
+void P_func () {
+    float U, I, P, R;
+    string quesP;
+    cout << "What is undnown: ";
+    cin >> quesP;
+    if (quesP == "U") {
+        cout << "Enter I(A): ";
+        cin >> I;
+        cout << "Enter R(Ω): ";
+        cin >> R;
+        float PU = pow(I, 2);
+        cout << "P = " << PU/R << endl;
+    } else if (quesP == "I") {
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float PI = pow(U, 2)/R;
+        cout << "P = " << PI << endl;
+    } else if (quesP == "R") {
+        cout << "Enter U(В): " << endl;
+        cin >> U;
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        float PR = U*I;
+        cout << "P = " << PR << endl;
+    } else {
+        cout << "Oops!\nSomething get wrong!" << endl;
+    }
+}
+
+void current_strength () {
+    string formula;
     cout << "Enter unknown parameter" << endl;
     cin >> formula;
     if (formula == "U") {
-        cout << "What is unknown" << endl;
-        cin >> ques;
-        if (ques == "I") {
-            cout << "Enter P(Вт): " << endl;
-            cin >> P;
-            cout << "Enter R(Ω): " << endl;
-            cin >> R;
-            float U1 = P*R;
-            float U2 = sqrt (U1);
-            cout << "U = " << U2 << endl;
-        } else if (ques == "P") {
-            cout << "Enter I(A): " << endl;
-            cin >> I;
-            cout << "Enter R(Ω): " << endl;
-            cin >> R;
-            float U_2 = I*R;
-            cout << "U = " << U_2 << endl;
-        } else if (ques == "R") {
-            cout << "Enter P(Вт): " << endl;
-            cin >> P;
-            cout << "Enter I(A): " << endl;
-            cin >> I;
-            float U_3 = P/I;
-            cout << "U = " << U_3 << endl;
-        } else {
-            cout << "Enter right value" << endl;
-        }
-
+        U_func();
     } else if (formula == "I") {
-        cout << "What is unknown" << endl;
-        string quesI;
-        cin >> quesI;
-        if (quesI == "U") {
-            cout << "Enter P(Вт): " << endl;
-            cin >> P;
-            cout << "Enter R(Ω): " << endl;
-            cin >> R;
-            float I1 = P/R;
-            float ans = sqrt (I1);
-            cout << "I = " << ans << endl;
-        } else if (quesI == "P") {
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            cout << "Enter R(Ω): " << endl;
-            cin >> R;
-            float I_2 = U/R;
-            cout << "I = " << I_2 << endl;
-        } else if (quesI == "R") {
-            cout << "Enter P(Вт): " << endl;
-            cin >> P;
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            float I_3 = P/U;
-            cout << "I = " << I_3 << endl;
-        } else {
-            cout << "Error" << endl;
-        }
-
+        I_func();
     } else if (formula == "R") {
-        string quesR;
-        cout << "What is unknown: ";
-        cin >> quesR;
-        if (quesR == "U") {
-            cout << "Enter P(Вт): ";
-            cin >> P;
-            cout << "Enter I(A): ";
-            cin >> I;
-            float R1 = pow(I, 2);
-            cout << "R = " << P/R1 << endl;
-        } else if (quesR == "P") {
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            cout << "Enter I(A): " << endl;
-            cin >> I;
-            float R_2 = U/I;
-            cout << "R = " << R_2 << endl;
-        } else if (quesR == "I") {
-            cout << "Enter P(Вт): " << endl;
-            cin >> P;
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            float RI = pow(U, 2);
-            cout << "R = " << RI/P << endl;
-        } else {
-            cout << "Sorry" << endl;
-        }
+        R_func();
     } else if (formula == "P") {
-        string quesP;
-        cout << "What is undnown: ";
-        cin >> quesP;
-        if (quesP == "U") {
-            cout << "Enter I(A): ";
-            cin >> I;
-            cout << "Enter R(Ω): ";
-            cin >> R;
-            float PU = pow(I, 2);
-            cout << "P = " << PU/R << endl;
-        } else if (quesP == "I") {
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            cout << "Enter R(Ω): " << endl;
-            cin >> R;
-            float PI = pow(U, 2)/R;
-            cout << "P = " << PI << endl;
-        } else if (quesP == "R") {
-            cout << "Enter U(В): " << endl;
-            cin >> U;
-            cout << "Enter I(A): " << endl;
-            cin >> I;
-            float PR = U*I;
-            cout << "P = " << PR << endl;
-        } else {
-            cout << "Oops!\nSomething get wrong!" << endl;
-        }
+        P_func();
     } else {
         cout << "You type wrong values";
     }
