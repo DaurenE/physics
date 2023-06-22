@@ -26,80 +26,114 @@ void elastic_deform();
 void law_of_energy_conservation();
 
 int main() {
+    cout << "Введите тип задачи\nНапишите 'stop' для завершения:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
+    cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19:  ";
     while (true) {
         string main_task;
-
-        cout << "Введите тип задачи\nНапишите 'stop' для завершения:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
-        cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19: ";
+        cout << "Enter the task number (0-19) or 'stop' to exit: ";
         cin >> main_task;
+        cout << endl;
 
-        if (main_task == "0") {
-            cout << "Your choice is: 'плотность'" << endl;
-            density();
-        } else if (main_task == "1") {
-            cout << "Your choice is: 'механическая_работа'" << endl;
-            mechanical_work();
-        } else if (main_task == "2") {
-            cout << "Your choice is: 'инерция'" << endl;
-            inertia();
-        } else if (main_task == "3") {
-            cout << "Your choice is: 'средняя_скорость'" << endl;
-            average_speed();
-        } else if (main_task == "4") {
-            cout << "Your choice is: 'мощность'" << endl;
-            power();
-        } else if (main_task == "5") {
-            cout << "Your choice is: 'сила тяжести'" << endl;
-            gravity();
-        } else if (main_task == "6") {
-            cout << "Your choice is: 'сила трения'" << endl;
-            friction_force();
-        } else if (main_task == "7") {
-            cout << "Your choice is: сила 'упругости'" << endl;
-            elastic_force();
-        } else if (main_task == "8") {
-            cout << "Your choice is: 'сила тока'" << endl;
-            current_strength();
-        } else if (main_task == "9") {
-            cout << "Your choice is: 'Давление'" << endl;
-            pressure();
-        } else if (main_task == "10") {
-            cout << "Your choice is: 'Давление в жидкостях и газах'" << endl;
-            pressure_in_liquds();
-        } else if (main_task == "11") {
-            cout << "Your choice is: 'перевод в СИ'" << endl;
-            SI_categories();
-        } else if (main_task == "12") {
-            cout << "Your choice is: 'Гидравличесская машина'" << endl;
-            gidravlical();
-        } else if (main_task == "13") {
-            cout << "Your choice is: 'Сообщающиеся сосуды'" << endl;
-            Communicating_Vessels();
-        } else if (main_task == "14") {
-            cout << "Your choice is: 'сила Архимеда'" << endl;
-            archimed();
-        } else if (main_task == "15") {
-            cout << "Your choice is: 'плотность сплава'" << endl;
-            alloy_density();
-        } else if (main_task == "16") {
-            cout << "Your choice is: 'Потенциальная энергия'" << endl;
-            potential_energy();
-        } else if (main_task == "17") {
-            cout << "Your choice is: 'Кинетичесская энергия'" << endl;
-            kinetic_energy();
-        } else if (main_task == "18") {
-            cout << "Your choice is: 'Упругая деформация'" << endl;
-            elastic_deform();
-        } else if (main_task == "19") {
-            cout << "Your choice is: 'Закон сохранения энергии'" << endl;
-            law_of_energy_conservation();
-        } else if (main_task == "stop") {
+        if (main_task == "stop") {
             break;
         }
+
+        cout << "Your choice is: ";
+
+        switch (stoi(main_task)) {
+            case 0:
+                cout << "'плотность'" << endl;
+                density();
+                break;
+            case 1:
+                cout << "'механическая_работа'" << endl;
+                mechanical_work();
+                break;
+            case 2:
+                cout << "'инерция'" << endl;
+                inertia();
+                break;
+            case 3:
+                cout << "'средняя_скорость'" << endl;
+                average_speed();
+                break;
+            case 4:
+                cout << "'мощность'" << endl;
+                power();
+                break;
+            case 5:
+                cout << "'сила тяжести'" << endl;
+                gravity();
+                break;
+            case 6:
+                cout << "'сила трения'" << endl;
+                friction_force();
+                break;
+            case 7:
+                cout << "сила 'упругости'" << endl;
+                elastic_force();
+                break;
+            case 8:
+                cout << "'сила тока'" << endl;
+                current_strength();
+                break;
+            case 9:
+                cout << "'Давление'" << endl;
+                pressure();
+                break;
+            case 10:
+                cout << "'Давление в жидкостях и газах'" << endl;
+                pressure_in_liquds();
+                break;
+            case 11:
+                cout << "'перевод в СИ'" << endl;
+                SI_categories();
+                break;
+            case 12:
+                cout << "'Гидравличесская машина'" << endl;
+                gidravlical();
+                break;
+            case 13:
+                cout << "'Сообщающиеся сосуды'" << endl;
+                Communicating_Vessels();
+                break;
+            case 14:
+                cout << "'сила Архимеда'" << endl;
+                archimed();
+                break;
+            case 15:
+                cout << "'плотность сплава'" << endl;
+                alloy_density();
+                break;
+            case 16:
+                cout << "'Потенциальная энергия'" << endl;
+                potential_energy();
+                break;
+            case 17:
+                cout << "'Кинетичесская энергия'" << endl;
+                kinetic_energy();
+                break;
+            case 18:
+                cout << "'Упругая деформация'" << endl;
+                elastic_deform();
+                break;
+            case 19:
+                cout << "'Закон сохранения энергии'" << endl;
+                law_of_energy_conservation();
+                break;
+            default:
+                cout << "Invalid task number." << endl;
+                break;
+        }
+
         cout << "\n" << endl;
-    }
+}
+
+return 0;
+
     return 0;
 }
+
 
 //Function for solving tasks about mechanical work
 void mechanical_work() {
