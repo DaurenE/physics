@@ -37,9 +37,7 @@ int main() {
         if (main_task == "stop") {
             break;
         }
-
         cout << "Your choice is: ";
-
         switch (stoi(main_task)) {
             case 0:
                 cout << "'плотность'" << endl;
@@ -128,9 +126,6 @@ int main() {
 
         cout << "\n" << endl;
 }
-
-return 0;
-
     return 0;
 }
 
