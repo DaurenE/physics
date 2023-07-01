@@ -135,7 +135,7 @@ void mechanical_work() {
     float A, N, t;
     string unknown;
 
-    cout << "Enter unknown value: ";
+    cout << "Enter unknown value (A, N, t): ";
     cin >> unknown;
 
     if (unknown == "A") {
