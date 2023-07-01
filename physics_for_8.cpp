@@ -6,7 +6,7 @@ using namespace std;
 void temprature();
 
 int main() {
-    cout << "Температура:0, ";
+    cout << "Температура:0, \n";
 	while (true) {
 		string choose;
 
@@ -29,29 +29,29 @@ int main() {
 void temprature () {
     string SI_temprature;
     float celsius, farengeit, kelvin;
-    cout << "Enter from what to what you want to convert:\nCelsius in Kelvin:001\nKelvin in Celsius:002\nFarengeit in Kelvin:003\nKelvin in Farengeit:004\nCelsius in Farengeit:005" << endl;
+    cout << "Enter from what to what you want to convert:\nCelsius in Kelvin:01\nKelvin in Celsius:02\nFarengeit in Kelvin:03\nKelvin in Farengeit:04\nCelsius in Farengeit:05" << endl;
     cin >> SI_temprature;
-    if (SI_temprature == "001") {
+    if (SI_temprature == "01") {
         cout << "Enter temprature in celsius: ";
         cin >> celsius;
         float temprature_c_k = celsius + 273.15;
         cout << "Answer is: " << temprature_c_k << endl;
-    } else if (SI_temprature == "002") {
+    } else if (SI_temprature == "02") {
         cout << "Enter temprature in Kelvin: ";
         cin >> kelvin;
         float temprature_k_c = kelvin - 273.15;
         cout << "Answer is: " << temprature_k_c << endl;
-    } else if (SI_temprature == "003") {
+    } else if (SI_temprature == "03") {
         cout << "Enter temprature in Farengeit: ";
         cin >> farengeit;
         float temprature_f_k = (farengeit-32)*5/9 + 273.15;
         cout << "Answer is: " << temprature_f_k << endl;
-    } else if (SI_temprature == "004") {
+    } else if (SI_temprature == "04") {
         cout << "Enter temprature in Kelvin: ";
         cin >> kelvin;
         float temprature_k_f = (kelvin-273.15)*9/5 + 32;
         cout << "Answer is: " << temprature_k_f << endl;
-    } else if (SI_temprature == "005") {
+    } else if (SI_temprature == "05") {
         cout << "Enter temprature in celsius: ";
         cin >> celsius;
         float temprature_c_f = (celsius*9/5) + 32;
