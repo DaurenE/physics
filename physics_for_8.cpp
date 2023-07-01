@@ -6,16 +6,23 @@ using namespace std;
 void temprature();
 
 int main() {
+    cout << "Температура:0, "
 	while (true) {
 		string choose;
 
-		cout << "Введите тип задачи\nНапишите 'stop' для завершения:\nтемпература:0, ";
+		cout << "Введите номер задачи от 0 до 19 или напишите 'stop' для завершения:\n";
 		cin >> choose;
 
-		if (choose == "0") {
-			cout << "Your choice is: 'температура'\n";
-			temprature();
+		if (choose == "stop") {
+			break;
 		}
+        cout << "Your choice is: ";
+        switch (stoi(choose)) {
+            case 0:
+                cout << "'Температура'\n";
+                temprature();
+                break;
+        }
 	}
 }
 
