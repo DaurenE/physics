@@ -169,7 +169,7 @@ void density() {
     float ro, m, v;
     string formula;
 
-    cout << "Enter unknown parameter (p, m, v)" << endl;
+    cout << "Enter unknown parameter (p, m, v):" << endl;
     cin >> formula;
 
     if (formula == "p") {
@@ -266,7 +266,7 @@ void average_speed () {
 void power () {
     string formula;
     float A, t, N, F, V;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (A, t, N, F, V): ";
     cin >> formula;
     if (formula == "N") {
         cout << "Enter A(Дж), t(сек): \n";
@@ -299,7 +299,7 @@ void gravity () {
     float m, F, g;
 
     cout << "Значения в H / кг:\n Меркурий 3,7\n Венера 8,9\n Земля 9,8\n Марс 3,7\n Юпитер 24,9\n Сатурн 10,6\n Уран 8,7\n Нептун 11,6\n Солнце 274\n Луна 1,6" << endl;
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter (F, m, g):" << endl;
     cin >> formula;
     if (formula == "F") {
         cout << "Enter m(кг): " << endl;
@@ -322,7 +322,7 @@ void friction_force () {
     string formula;
     float F, u, N;
 
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter (F, u, N):" << endl;
     cin >> formula;
     if (formula == "F") {
         cout << "Enter μ: " << endl;
@@ -361,7 +361,7 @@ void elastic_force () {
     string formula;
     float F, k, x;
 
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter (F, k, △x): " << endl;
     cin >> formula;
     if (formula == "F") {
         cout << "Enter k(H/м): " << endl;
@@ -391,7 +391,7 @@ void elastic_force () {
 void U_func () {
     float U, I, P, R;
     string ques;
-    cout << "What is unknown" << endl;
+    cout << "What is unknown (I, P, R):" << endl;
     cin >> ques;
     if (ques == "I") {
         cout << "Enter P(Вт): " << endl;
@@ -420,8 +420,8 @@ void U_func () {
     }
 }
 void I_func () {
-    float U, I, P, R;
-    cout << "What is unknown" << endl;
+    float U, P, R;
+    cout << "What is unknown (U, P, R):" << endl;
     string quesI;
     cin >> quesI;
     if (quesI == "U") {
@@ -452,9 +452,9 @@ void I_func () {
 }
 
 void R_func () {
-    float U, I, P, R;
+    float U, I, P;
     string quesR;
-    cout << "What is unknown: ";
+    cout << "What is unknown (U, I, R): ";
     cin >> quesR;
     if (quesR == "U") {
         cout << "Enter P(Вт): ";
@@ -483,9 +483,9 @@ void R_func () {
 }
 
 void P_func () {
-    float U, I, P, R;
+    float U, I, R;
     string quesP;
-    cout << "What is undnown: ";
+    cout << "What is undnown (U, I, R): ";
     cin >> quesP;
     if (quesP == "U") {
         cout << "Enter I(A): ";
@@ -534,7 +534,7 @@ void current_strength () {
 void pressure () {
     string formula;
     float p, F, S;
-    cout << "Enter unknown parameter: " << endl;
+    cout << "Enter unknown parameter (p, F, S): ";
     cin >> formula;
     if (formula == "p") {
         cout << "Enter F(H): " << endl;
@@ -783,29 +783,33 @@ void SI_categories () {
 
 void pressure_in_liquds () {
     string unexpected;
-    float ρ, g = 10, P, h;
-    cout << "Enter unknown parameter: ";
+    float ρ, g, P, h;
+    cout << "Enter unknown parameter (ρ, g, P, h): ";
     cin >> unexpected;
     if (unexpected == "h") {
         cout << "Enter ρ(кг/м3): ";
         cin >> ρ;
         cout << "Enter P(Па): ";
         cin >> P;
+        cout << "Enter g(м/с): ";
+        cin >> g;
         cout << "Analysis: h = P/ρg\nAnswer is: h = " << P/ρ*g << endl;
     } else if (unexpected == "ro") {
         cout << "Enter h(м): ";
         cin >> h;
         cout << "Enter P(Па): ";
         cin >> P;
+        cout << "Enter g(м/с): ";
+        cin >> g;
         cout << "Analysis: ρ = P/gh\nAnswer is: ρ = " << P/g*h << endl;
     } else if (unexpected == "P") {
         cout << "Enter ρ(кг/м3): ";
         cin >> ρ;
         cout << "Enter h(м): ";
         cin >> h;
+        cout << "Enter g(м/с): ";
+        cin >> g;
         cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << endl;
-    } else if (unexpected == "g") {
-        cout << "g is always 9.8 rounded to 10" << endl;
     } else {
         cout << "Error" << endl;
     }
@@ -815,7 +819,7 @@ void gidravlical () {
     string F_input;
     float F1, S1, S2, h1, h2, F2;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (F1, S1, S2, h1, h2, F2): ";
     cin >> F_input;
 
     if (F_input == "F2") {
@@ -858,7 +862,7 @@ void Communicating_Vessels () {
     string unknown;
     float h2, p2, h1, p1;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (h2, p2, h1, p1): ";
     cin >> unknown;
     if (unknown == "p1") {
         cout << "Enter h2, p2, h1: ";
@@ -885,7 +889,7 @@ void archimed () {
     string Unknown;
     float p, Fa, V;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (p, Fa, V): ";
     cin >> Unknown;
     if (Unknown == "p") {
         cout << "Enter Fa(H): ";
@@ -913,7 +917,7 @@ void archimed () {
 void potential_energy() {
     string unknown;
     float m, h, Ep;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (m, h, Ep): ";
     cin >> unknown;
     if (unknown == "Ep") {
         cout << "Enter m(кг): ";
@@ -942,7 +946,7 @@ void potential_energy() {
 void elastic_deform() {
     string unknown;
     float k, x, Ep;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (k, x, Ep): ";
     cin >> unknown;
     if (unknown == "Ep") {
         cout << "Enter k(H/м): ";
@@ -970,7 +974,7 @@ void elastic_deform() {
 void kinetic_energy() {
     string not_given;
     float m, V, Ek;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (m, V, Ek): ";
     cin >> not_given;
     if (not_given == "Ek") {
         cout << "Enter m(кг): ";
@@ -998,9 +1002,9 @@ void kinetic_energy() {
 
 void law_of_energy_conservation() {
     string unknown, yes_or_no;
-    double Ek, Ep, Em, V, h, m, g;
+    float Ek, Ep, Em, V, h, m, g;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (Ek, Ep, Em, V, h, m, g): ";
     cin >> unknown;
 
     if (unknown == "Em") {
