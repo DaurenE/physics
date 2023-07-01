@@ -6,7 +6,7 @@ using namespace std;
 void temprature();
 
 int main() {
-    cout << "Температура:0, "
+    cout << "Температура:0, ";
 	while (true) {
 		string choose;
 
