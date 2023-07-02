@@ -6,7 +6,7 @@ using namespace std;
 void temprature();
 
 int main() {
-    cout << "Температура:0, ";
+    cout << "Перевод в температуру:0, ";
 	while (true) {
 		string choose;
 
@@ -20,13 +20,13 @@ int main() {
         switch (stoi(choose)) {
             case 0:
                 cout << "'Температура'\n";
-                temprature();
+                translation_to_temprature();
                 break;
         }
 	}
 }
 
-void temprature () {
+void translation_to_temprature () {
     string SI_temprature;
     float celsius, farengeit, kelvin;
     cout << "Enter from what to what you want to convert:\nCelsius in Kelvin:001\nKelvin in Celsius:002\nFarengeit in Kelvin:003\nKelvin in Farengeit:004\nCelsius in Farengeit:005" << endl;
@@ -59,4 +59,19 @@ void temprature () {
     } else {
         cout << "4o4" << endl;
     }
+}
+
+//define warm func
+void warm () {
+    float Q, C, T, answer;
+    string unknown;
+    cout << "Enter unknown value (C, Q, T): ";
+    cin >> unknown;
+    if (unknown == "C") {
+        cout << "Enter Q, △T: ";
+        cin >> Q >> T;
+        answer = Q/T;
+        cout << "Analisys: C = Q/△T\nAnswer is: " << answer << '\n';
+    }
+
 }
