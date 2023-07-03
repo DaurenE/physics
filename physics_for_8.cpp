@@ -63,15 +63,25 @@ void translation_to_temprature () {
 
 //define warm func
 void warm () {
-    float Q, C, T, answer;
+    float Q, m, C, c, T, answer;
     string unknown;
-    cout << "Enter unknown value (C, Q, T): ";
+    cout << "Enter unknown value (C, Q, T, c, m): ";
     cin >> unknown;
     if (unknown == "C") {
-        cout << "Enter Q, △T: ";
+        cout << "Enter Q, △T:\n";
         cin >> Q >> T;
         answer = Q/T;
         cout << "Analisys: C = Q/△T\nAnswer is: " << answer << "[Дж/˚С]\n";
-    }
+    } else if (unknown == "c") {
+        cout << "Enter Q, △T, m:\n";
+        cin >> Q >> T >> m;
+        answer = Q/T*m;
+        cout << "Analisys: c = Q/△T*m\nAnswer is: " << answer << "[Дж/˚С*кг]\n"; 
+    } else if (unknown == "Q") {
+        cout << "Enter c, m, △T:\n";
+        cint >> c >> m >> T;
+        answer = c*m*T;
+        cout << "Analisys: Q = c*m*△T\nAnswer is: " << answer << "[Дж]\n";
+    } else if ()
 
 }
