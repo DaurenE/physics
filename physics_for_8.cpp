@@ -71,7 +71,7 @@ void warm () {
         cout << "Enter Q, △T: ";
         cin >> Q >> T;
         answer = Q/T;
-        cout << "Analisys: C = Q/△T\nAnswer is: " << answer << '\n';
+        cout << "Analisys: C = Q/△T\nAnswer is: " << answer << "[Дж/˚С]\n";
     }
 
 }
