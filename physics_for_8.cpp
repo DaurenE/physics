@@ -82,7 +82,7 @@ void warm () {
         answer = Q/T*m;
         cout << "Analisys: c = Q/△T*m\nAnswer is: " << answer << "[Дж/˚С*кг]\n"; 
     } else if (unknown == "Q") {
-        cout << "Enter c, m, △T:\n";
+        cout << "Enter c, m, △T: \n";
         cint >> c >> m >> T;
         answer = c*m*T;
         cout << "Analisys: Q = c*m*△T\nAnswer is: " << answer << "[Дж]\n";
