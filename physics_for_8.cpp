@@ -96,7 +96,7 @@ void warm () {
     } else if (unknown == "T") {
         cout << "Enter Q, c, m:\n";
         cin >> Q >> c >> m;
-        answer = Q/c*m
+        answer = Q/c*m;
         cout << "Analisys: △T = Q/cm\nAnswer is: " << answer << "[˚С]\n";
     } else {
         cout << "Error";
