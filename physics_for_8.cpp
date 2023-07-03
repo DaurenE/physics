@@ -6,11 +6,11 @@ using namespace std;
 void temprature();
 
 int main() {
-    cout << "Перевод в температуру:0, ";
+    cout << "Перевод в температуру:0, Теплота:1, Сила тока:2";
 	while (true) {
 		string choose;
 
-		cout << "Введите номер задачи от 0 до 19 или напишите 'stop' для завершения:\n";
+		cout << "Введите номер задачи от 0 до 2 или напишите 'stop' для завершения:\n";
 		cin >> choose;
 
 		if (choose == "stop") {
@@ -25,6 +25,10 @@ int main() {
             case 1:
                 cout << "'теплота'\n";
                 warm();
+                break;
+            case 2:
+                cout << "'сила тока'\n";
+                current_strength();
                 break;
         }
 	}
