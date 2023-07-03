@@ -3,7 +3,7 @@
 using namespace std;
 
 
-void temprature();
+void translation_to_temprature();
 void warm();
 void current_strength();
 
