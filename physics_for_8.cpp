@@ -90,10 +90,17 @@ void warm () {
         cout << "Analisys: c = Q/△T*m\nAnswer is: " << answer << "[Дж/˚С*кг]\n"; 
     } else if (unknown == "Q") {
         cout << "Enter c, m, △T: \n";
-        cint >> c >> m >> T;
+        cin >> c >> m >> T;
         answer = c*m*T;
         cout << "Analisys: Q = c*m*△T\nAnswer is: " << answer << "[Дж]\n";
-    } else if ()
+    } else if (unknown == "T") {
+        cout << "Enter Q, c, m:\n";
+        cin >> Q >> c >> m;
+        answer = Q/c*m;
+        cout << "Analisys: △T = Q/cm\nAnswer is: " << answer << "[˚С]\n";
+    } else {
+        cout << "Error";
+    }
 
 }
 
