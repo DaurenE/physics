@@ -417,7 +417,7 @@ void pressure () {
 //converts any length to the one you need
 void length () {
     string SI;
-    float km, m, cm, mm;
+    float km, m, cm, mm, length_centemeters_m, length_kilometers_cm;
     cout << "Enter from what to what you want to convert:\nкм в м:001\nм в км:002\nм в см:003\nсм в м:004\nсм в км:005\nкм в см:006\nмм в м:007\nм в мм:008";
     cin >> SI;
     if (SI == "001") {
@@ -438,7 +438,7 @@ void length () {
     } else if (SI == "004") {
         cout << "Enter length in cm" << endl;
         cin >> cm;
-        float length_centemeters_m = cm / 100;
+        length_centemeters_m = cm / 100;
     } else if (SI == "005") {
         cout << "Enter length in cm: ";
         cin >> cm;
@@ -447,7 +447,7 @@ void length () {
     } else if (SI == "006") {
         cout << "Enter length in km: ";
         cin >> km;
-        float length_kilometers_cm = km * 100000;
+        length_kilometers_cm = km * 100000;
     } else if (SI == "007") {
         cout << "Enter length in mm: ";
         float mm;
