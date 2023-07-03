@@ -22,6 +22,10 @@ int main() {
                 cout << "'Температура'\n";
                 translation_to_temprature();
                 break;
+            case 1:
+                cout << "'теплота'\n";
+                warm();
+                break;
         }
 	}
 }
