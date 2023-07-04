@@ -9,7 +9,7 @@ void warm();
 void current_strength();
 
 int main() {
-    cout << "Перевод в температуру:0, ";
+    cout << "Перевод в температуру:0, Теплота:1, Сила тока:2";
 	while (true) {
 		string choose;
 
