@@ -231,7 +231,7 @@ void P_func () {
 
 void current_strength () {
     string formula;
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter (U, I, R, P): " << endl;
     cin >> formula;
     if (formula == "U") {
         U_func();
