@@ -139,7 +139,9 @@ void voltage () {
     } else {
         cout << "Enter right value" << endl;
     }
+
 }
+
 void current_s () {
     float U, P, R;
     cout << "What is unknown (U, P, R):" << endl;
