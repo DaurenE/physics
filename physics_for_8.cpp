@@ -137,7 +137,7 @@ void voltage () {
         float U_3 = P/I;
         cout << "U = " << U_3 << endl;
     } else {
-        cout << "Error";
+        cout << "Enter right value" << endl;
     }
 
 }
