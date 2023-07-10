@@ -79,32 +79,70 @@ void warm () {
     cout << "Enter unknown value (C, Q, T, c, m): ";
     cin >> unknown;
     if (unknown == "C") {
-        cout << "Enter Q, △T:\n";
+        cout << "Enter Q, △t:\n";
         cin >> Q >> T;
         answer = Q/T;
-        cout << "Analisys: C = Q/△T\nAnswer is: " << answer << "[Дж/˚С]\n";
+        cout << "Analisys: C = Q/△t\nAnswer is: " << answer << "[Дж/˚С]\n";
     } else if (unknown == "c") {
-        cout << "Enter Q, △T, m:\n";
+        cout << "Enter Q, △t, m:\n";
         cin >> Q >> T >> m;
         answer = Q/T*m;
-        cout << "Analisys: c = Q/△T*m\nAnswer is: " << answer << "[Дж/˚С*кг]\n"; 
+        cout << "Analisys: c = Q/△t*m\nAnswer is: " << answer << "[Дж/˚С*кг]\n"; 
     } else if (unknown == "Q") {
-        cout << "Enter c, m, △T:\n";
+        cout << "Enter c, m, △t: \n";
         cin >> c >> m >> T;
         answer = c*m*T;
-        cout << "Analisys: Q = c*m*△T\nAnswer is: " << answer << "[Дж]\n";
+        cout << "Analisys: Q = c*m*△t\nAnswer is: " << answer << "[Дж]\n";
     } else if (unknown == "T") {
         cout << "Enter Q, c, m:\n";
         cin >> Q >> c >> m;
         answer = Q/c*m;
-        cout << "Analisys: △T = Q/cm\nAnswer is: " << answer << "[˚С]\n";
+        cout << "Analisys: △t = Q/cm\nAnswer is: " << answer << "[˚С]\n";
+    } else if (unknown == "q") {
+        cout << "Enter Q, m:\n";
+        cin >> Q, m;
+        answer = Q/m;
+        cout << "Analisys: q = Q/m\nAnswer is: " << answer << "[Дж/кг]\n";
     } else {
         cout << "Error";
     }
 
 }
 
-void I_func () {
+void voltage () {
+    float U, I, P, R;
+    string ques;
+    cout << "What is unknown (I, P, R):" << endl;
+    cin >> ques;
+    if (ques == "I") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float U1 = P*R;
+        float U2 = sqrt (U1);
+        cout << "U = " << U2 << endl;
+    } else if (ques == "P") {
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        cout << "Enter R(Ω): " << endl;
+        cin >> R;
+        float U_2 = I*R;
+        cout << "U = " << U_2 << endl;
+    } else if (ques == "R") {
+        cout << "Enter P(Вт): " << endl;
+        cin >> P;
+        cout << "Enter I(A): " << endl;
+        cin >> I;
+        float U_3 = P/I;
+        cout << "U = " << U_3 << endl;
+    } else {
+        cout << "Error";
+    }
+
+}
+
+void current_s () {
     float U, P, R;
     cout << "What is unknown (U, P, R):" << endl;
     string quesI;
@@ -136,7 +174,7 @@ void I_func () {
     }
 }
 
-void R_func () {
+void resistance () {
     float U, I, P;
     string quesR;
     cout << "What is unknown (U, I, R): ";
@@ -167,7 +205,7 @@ void R_func () {
     }
 }
 
-void P_func () {
+void power () {
     float U, I, R;
     string quesP;
     cout << "What is undnown (U, I, R): ";
@@ -200,18 +238,80 @@ void P_func () {
 
 void current_strength () {
     string formula;
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter (U, I, R, P): " << endl;
     cin >> formula;
     if (formula == "U") {
-        U_func();
+        voltage();
     } else if (formula == "I") {
-        I_func();
+        current_s();
     } else if (formula == "R") {
-        R_func();
+        resistance();
     } else if (formula == "P") {
-        P_func();
+        power();
     } else {
         cout << "You type wrong values";
     }
 
 }
+
+//Defining a func state of aggregation
+void state_of_aggregation () {
+    float lambda, Q, m, phi, rho, rho0;
+    string unknown, answer;
+    cout << "Enter unknown parameter (λ-lambda, Q, m\nφ-phi, ρ-rho, l):\n";
+    cin >> unknown;
+    if (unknown == "lambda") {
+        cout << "Enter Q, m: ";
+        cin >> Q, m;
+        answer = Q/m;
+        cout << "Analisys: λ = Q/m\nAnswer is: " << answer << "[Дж/кг]\n";
+    } else if (unknown == "Q") {
+        cout << "Enter λ, m: ";
+        cin >> lambda >> m;
+        answer = lambda*m;
+        cout << "Analisys: Q = λ•m\nAnswer is: " << answer << "[Дж]\n";
+    } else if (unknown == "phi") {
+        cout << "Enter ρ, ρ0:\n";
+        cin >> rho >> rho0;
+        answer = (rho/rho0)*1;
+        cout << "Analisys: φ = ρ/ρ0*100%\nAnswer is: " << answer << "[%]\n";
+    } else if (unknown == "L") {
+        cout << "Enter Q, m:\n";
+        cin >> Q, m;
+        answer = Q/m;
+        cout << "Analisys: L = Q/m\nAnswer is: " << answer << "[Дж/кг]\n";
+    } else {
+        cout << "error";
+    }
+}
+
+
+
+
+
+/*
+Α	α	    alpha      a --> father
+Β	β	    beta       b
+Γ	γ	    gamma      g
+Δ	δ	    delta      d
+Ε	ε	    epsilon    e --> end
+Ζ	ζ	    zêta       z
+Η	η	    êta        ê --> hey
+Θ	θ	    thêta      th --> thick
+Ι	ι	    iota       i --> it
+Κ	κ    	kappa      k
+Λ	λ	    lambda     l
+Μ	μ	    mu         m
+Ν	ν    	nu         n
+Ξ	ξ	    xi         ks --> box
+Ο	ο	    omikron    o --> off
+Π	π	    pi         p
+Ρ	ρ	    rho        r
+Σ	σ, ς    sigma      s --> say
+Τ	τ    	tau        t
+Υ	υ	    upsilon    u --> put
+Φ	φ	    phi        f
+Χ	χ	    chi        ch --> Bach
+Ψ	ψ	    psi        ps
+Ω	ω	    omega      ô --> grow
+*/

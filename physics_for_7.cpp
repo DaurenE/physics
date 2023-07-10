@@ -12,7 +12,6 @@ void power();
 void gravity();
 void friction_force();
 void elastic_force();
-void current_strength();
 void pressure();
 void pressure_in_liquds();
 void SI_categories();
@@ -26,8 +25,8 @@ void elastic_deform();
 void law_of_energy_conservation();
 
 int main() {
-    cout << "Плотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, Давление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
-    cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19\n\n:";
+    cout << "Плотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, Давление:8, Давление в жидкостях и газах:9,\nперевод в СИ:10, Гидравличесская машина:11, ";
+    cout << "Сообщающиеся сосуды:12,\nсила Архимеда:13, плотность сплава:14, Потенциальная энергия:15,\nКинетичесская энергия:16, Упругая деформация:17, Закон сохранения энергии:18\n\n:";
     while (true) {
         string main_task;
         cout << "Введите номер задачи от 0 до 18 или 'stop' для завершения: ";
@@ -71,47 +70,51 @@ int main() {
                 cout << "сила 'упругости'" << endl;
                 elastic_force();
                 break;
+<<<<<<< HEAD
             case 9:
+=======
+            case 8:
+>>>>>>> basic-code
                 cout << "'Давление'" << endl;
                 pressure();
                 break;
-            case 10:
+            case 9:
                 cout << "'Давление в жидкостях и газах'" << endl;
                 pressure_in_liquds();
                 break;
-            case 11:
+            case 10:
                 cout << "'перевод в СИ'" << endl;
                 SI_categories();
                 break;
-            case 12:
+            case 11:
                 cout << "'Гидравличесская машина'" << endl;
                 gidravlical();
                 break;
-            case 13:
+            case 12:
                 cout << "'Сообщающиеся сосуды'" << endl;
                 Communicating_Vessels();
                 break;
-            case 14:
+            case 13:
                 cout << "'сила Архимеда'" << endl;
                 archimed();
                 break;
-            case 15:
+            case 14:
                 cout << "'плотность сплава'" << endl;
                 alloy_density();
                 break;
-            case 16:
+            case 15:
                 cout << "'Потенциальная энергия'" << endl;
                 potential_energy();
                 break;
-            case 17:
+            case 16:
                 cout << "'Кинетичесская энергия'" << endl;
                 kinetic_energy();
                 break;
-            case 18:
+            case 17:
                 cout << "'Упругая деформация'" << endl;
                 elastic_deform();
                 break;
-            case 19:
+            case 18:
                 cout << "'Закон сохранения энергии'" << endl;
                 law_of_energy_conservation();
                 break;
@@ -121,7 +124,7 @@ int main() {
         }
 
         cout << "\n" << endl;
-}
+    }
     return 0;
 }
 
@@ -382,6 +385,7 @@ void elastic_force () {
     }
 
 }
+<<<<<<< HEAD
 
 
 void U_func () {
@@ -417,6 +421,8 @@ void U_func () {
 }
 
 
+=======
+>>>>>>> basic-code
 void pressure () {
     string formula;
     float p, F, S;
@@ -448,7 +454,7 @@ void pressure () {
 //converts any length to the one you need
 void length () {
     string SI;
-    float km, m, cm, mm;
+    float km, m, cm, mm, length_centemeters_m, length_kilometers_cm;
     cout << "Enter from what to what you want to convert:\nкм в м:001\nм в км:002\nм в см:003\nсм в м:004\nсм в км:005\nкм в см:006\nмм в м:007\nм в мм:008";
     cin >> SI;
     if (SI == "001") {
@@ -469,7 +475,7 @@ void length () {
     } else if (SI == "004") {
         cout << "Enter length in cm" << endl;
         cin >> cm;
-        float length_centemeters_m = cm / 100;
+        length_centemeters_m = cm / 100;
     } else if (SI == "005") {
         cout << "Enter length in cm: ";
         cin >> cm;
@@ -478,7 +484,7 @@ void length () {
     } else if (SI == "006") {
         cout << "Enter length in km: ";
         cin >> km;
-        float length_kilometers_cm = km * 100000;
+        length_kilometers_cm = km * 100000;
     } else if (SI == "007") {
         cout << "Enter length in mm: ";
         float mm;
