@@ -9,7 +9,7 @@ void warm();
 void current_strength();
 
 int main() {
-    cout << "Перевод в температуру:0, Теплота:1, Сила тока:2";
+    cout << "Перевод в температуру:0, Теплота:1, Сила тока:2\nАгрегатное состояние жидкостей:3, Закон Кулона:4, Закон Джоуля Ленца:5\nЗакон отражения света:6, Закон преломления света:7, Оптическая сила линзы:8\n";
 	while (true) {
 		string choose;
 
@@ -32,6 +32,30 @@ int main() {
             case 2:
                 cout << "'сила тока'\n";
                 current_strength();
+                break;
+            case 3:
+                cout << "'Агрегатное состояние жидкостей'\n";
+                state_of_aggregation();
+                break;
+            case 4:
+                cout << "'Закон Кулона'\n";
+                Coulombs_law();
+                break;
+            case 5:
+                cout << "'Закон Джоуля Ленца'\n";
+                JouleLenz_law();
+                break;
+            case 6:
+                cout << "'Закон отражения света'\n";
+                Law_of_light_reflection();
+                break;
+            case 7:
+                cout << "'Закон преломления света'\n";
+                Law_of_refraction_of_light();
+                break;
+            case 8:
+                cout << "'Оптическая сила линзы'\n";
+                Optical_power_of_the_lens();
                 break;
         }
 	}
