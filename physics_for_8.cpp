@@ -285,9 +285,49 @@ void state_of_aggregation () {
     }
 }
 
+void Coulombs_law() {
+    float F, k, q, q1, q2, t, r2, I;
+    string unknown, answer;
+    cout << "Enter unknown parametr(F, k, q1, q2, r): ";
+    cin >> unknown;
+    if (unknown == "F") {
+        cout << "Enter k, q1, q2, r^2\n";
+        cin >> k, q1, q2, r2;
+        answer = k * (q1 * q2)/r2;
+        cout << "Analisys: F = k•(q1•q2)/r^2\nAnwer is: " << answer << "[H]\n";
+    } else if (unknown == "I") {
+        cout << "Enter q, t: ";
+        cin >> q >> t;
+        answer = q/t;
+        cout << "Analisys: I = q/t\nAnswer is: " << answer << "[A]\n";
+    } else {
+        cout << "error\n";
+    }
+}
 
+void JouleLenz_law () {
+    cout << "Q = I^2*R*t\nQ = U*I*t\nQ = P*t\nQ = U^2/R*t";
+}
 
+void Law_of_light_reflection() {
+    cout << "α = β [град]";
+}
 
+void Law_of_refraction_of_light() {
+    cout << "sin α/sin β = n";
+}
+
+void Optical_power_of_the_lens() {
+    float D, F;
+    string unknown;
+    cout << "Enter unknown parametr(D, F): ";
+    cin >> unknown;
+    if (unknown == "D") {
+        cout << "Enter F: ";
+        cin >> F;
+        cout << "Analisys: D = 1/F\nAnswer is: " << 1/F << "[Дптр]\n";
+    }
+}
 
 /*
 Α	α	    alpha      a --> father
