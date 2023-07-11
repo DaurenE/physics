@@ -13,7 +13,7 @@ int main() {
 	while (true) {
 		string choose;
 
-		cout << "Введите номер задачи от 0 до 2 или напишите 'stop' для завершения:\n";
+		cout << "Введите номер задачи от 0 до 8 или напишите 'stop' для завершения:\n";
 		cin >> choose;
 
 		if (choose == "stop") {
