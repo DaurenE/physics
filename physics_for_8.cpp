@@ -7,6 +7,13 @@ using namespace std;
 void translation_to_temprature();
 void warm();
 void current_strength();
+void state_of_aggregation();
+void Coulombs_law();
+void JouleLenz_law();
+void Law_of_light_reflection();
+void Law_of_refraction_of_light();
+void Optical_power_of_the_lens();
+
 
 int main() {
     cout << "Перевод в температуру:0, Теплота:1, Сила тока:2\nАгрегатное состояние жидкостей:3, Закон Кулона:4, Закон Джоуля Ленца:5\nЗакон отражения света:6, Закон преломления света:7, Оптическая сила линзы:8\n";
