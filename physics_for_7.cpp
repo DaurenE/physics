@@ -70,11 +70,7 @@ int main() {
                 cout << "сила 'упругости'" << endl;
                 elastic_force();
                 break;
-<<<<<<< HEAD
-            case 9:
-=======
             case 8:
->>>>>>> basic-code
                 cout << "'Давление'" << endl;
                 pressure();
                 break;
