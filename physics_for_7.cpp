@@ -1,3 +1,5 @@
+//When I write this only me and God knows what is it 
+//Now only God knows
 #include <iostream>
 #include <cmath>
 
@@ -381,6 +383,7 @@ void elastic_force () {
     }
 
 }
+
 void pressure () {
     string formula;
     float p, F, S;
