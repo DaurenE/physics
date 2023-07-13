@@ -72,11 +72,7 @@ int main() {
                 cout << "сила 'упругости'" << endl;
                 elastic_force();
                 break;
-<<<<<<< HEAD
-            case 9:
-=======
             case 8:
->>>>>>> basic-code
                 cout << "'Давление'" << endl;
                 pressure();
                 break;
@@ -387,44 +383,8 @@ void elastic_force () {
     }
 
 }
-<<<<<<< HEAD
 
 
-void U_func () {
-    float U, I, P, R;
-    string ques;
-    cout << "What is unknown (I, P, R):" << endl;
-    cin >> ques;
-    if (ques == "I") {
-        cout << "Enter P(Вт): " << endl;
-        cin >> P;
-        cout << "Enter R(Ω): " << endl;
-        cin >> R;
-        float U1 = P*R;
-        float U2 = sqrt (U1);
-        cout << "U = " << U2 << endl;
-    } else if (ques == "P") {
-        cout << "Enter I(A): " << endl;
-        cin >> I;
-        cout << "Enter R(Ω): " << endl;
-        cin >> R;
-        float U_2 = I*R;
-        cout << "U = " << U_2 << endl;
-    } else if (ques == "R") {
-        cout << "Enter P(Вт): " << endl;
-        cin >> P;
-        cout << "Enter I(A): " << endl;
-        cin >> I;
-        float U_3 = P/I;
-        cout << "U = " << U_3 << endl;
-    } else {
-        cout << "Enter right value" << endl;
-    }
-}
-
-
-=======
->>>>>>> basic-code
 void pressure () {
     string formula;
     float p, F, S;
