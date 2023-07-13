@@ -384,7 +384,6 @@ void elastic_force () {
 
 }
 
-
 void pressure () {
     string formula;
     float p, F, S;
