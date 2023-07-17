@@ -1,6 +1,7 @@
 package com.example.test;
 
 import android.os.Bundle;
+import android.text.Editable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -33,6 +34,9 @@ public class FirstFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 System.out.println("hello android");
+                double first = Integer.parseInt(binding.editFirst.getText().toString());
+                double second = Integer.parseInt(binding.editSecond.getText().toString());
+                binding.answer.setText("Answer: " + (first + second));
             }
         });
     }
