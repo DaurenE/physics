@@ -33,68 +33,93 @@ int main() {
         cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19:\n";
         cin >> main_task;
 
-        if (main_task == "0") {
+        switch (stoi(main_task)) {
+        case 0:
             cout << "Your choice is: 'плотность'" << endl;
             density();
-        } else if (main_task == "1") {
+            break;
+        case 1:
             cout << "Your choice is: 'механическая_работа'" << endl;
             mechanical_work();
-        } else if (main_task == "2") {
+            break;
+        case 2:
             cout << "Your choice is: 'инерция'" << endl;
             inertia();
-        } else if (main_task == "3") {
+            break;
+        case 3:
             cout << "Your choice is: 'средняя_скорость'" << endl;
             average_speed();
-        } else if (main_task == "4") {
+            break;
+        case 4:
             cout << "Your choice is: 'мощность'" << endl;
             power();
-        } else if (main_task == "5") {
+            break;
+        case 5:
             cout << "Your choice is: 'сила тяжести'" << endl;
             gravity();
-        } else if (main_task == "6") {
+            break;
+        case 6:
             cout << "Your choice is: 'сила трения'" << endl;
             friction_force();
-        } else if (main_task == "7") {
+            break;
+        case 7:
             cout << "Your choice is: сила 'упругости'" << endl;
             elastic_force();
-        } else if (main_task == "8") {
+            break;
+        case 8:
             cout << "Your choice is: 'сила тока'" << endl;
             sila_toka();
-        } else if (main_task == "9") {
+            break;
+        case 9:
             cout << "Your choice is: 'Давление'" << endl;
             pressure();
-        } else if (main_task == "10") {
+            break;
+        case 10:
             cout << "Your choice is: 'Давление в жидкостях и газах'" << endl;
             pressure_in_liquds();
-        } else if (main_task == "11") {
+            break;
+        case 11:
             cout << "Your choice is: 'перевод в СИ'" << endl;
             SI_categories();
-        } else if (main_task == "12") {
-            cout << "Your choice is: 'Гидравличесская машина'" << endl;
+            break;
+        case 12:
+            cout << "Your choice is: 'Гидравлическая машина'" << endl;
             gidravlical();
-        } else if (main_task == "13") {
+            break;
+        case 13:
             cout << "Your choice is: 'Сообщающиеся сосуды'" << endl;
             Communicating_Vessels();
-        } else if (main_task == "14") {
+            break;
+        case 14:
             cout << "Your choice is: 'сила Архимеда'" << endl;
             archimed();
-        } else if (main_task == "15") {
+            break;
+        case 15:
             cout << "Your choice is: 'плотность сплава'" << endl;
             Density_splava();
-        } else if (main_task == "16") {
+            break;
+        case 16:
             cout << "Your choice is: 'Потенциальная энергия'" << endl;
             potential_energy();
-        } else if (main_task == "17") {
-            cout << "Your choice is: 'Кинетичесская энергия'" << endl;
+            break;
+        case 17:
+            cout << "Your choice is: 'Кинетическая энергия'" << endl;
             kinetic_energy();
-        } else if (main_task == "18") {
+            break;
+        case 18:
             cout << "Your choice is: 'Упругая деформация'" << endl;
             elastic_deform();
-        } else if (main_task == "19") {
+            break;
+        case 19:
             cout << "Your choice is: 'Закон сохранения энергии'" << endl;
             law_of_energy_conservation();
-        }
+            break;
+        default:
+            cout << "Invalid choice. Please enter a valid option." << endl;
+            break;
+        }   
         cout << "\n" << endl;
+
     }
     return 0;
 }
