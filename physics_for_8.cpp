@@ -1,6 +1,5 @@
 #include <iostream>
 #include <cmath>
-#include "physics_for_8.h"
 
 using namespace std;
 
