@@ -128,26 +128,20 @@ void mechanical_work() {
     float A, N, t, F, V;
     string unknown;
 
-    cout << "Enter unknown value: " << endl;
+    cout << "Enter unknown value (A, N, t): " << endl;
     cin >> unknown;
     if (unknown == "A") {
-        cout << "Enter N: " << endl;
-        cin >> N;
-        cout << "Enter t: " << endl;
-        cin >> t;
-        cout << "A = " << N/t << endl;
+        cout << "Enter N, t: ";
+        cin >> N >> t;
+        cout << "A = " << N/t << '\n';
     } else if (unknown == "N") {
-        cout << "Enter A: " << endl;
-        cin >> A;
-        cout << "Enter t: " << endl;
-        cin >> t;
-        cout << "N = " << A/t << endl;
+        cout << "Enter A, t: ";
+        cin >> A >> t;
+        cout << "N = " << A/t << '\n';
     } else if (unknown == "t") {
-        cout << "Enter A: " << endl;
-        cin >> A;
-        cout << "Enter N: " << endl;
-        cin >> N;
-        cout << "t = " << N/A << endl;
+        cout << "Enter A, N: ";
+        cin >> A >> N;
+        cout << "t = " << N/A << '\n';
     } else {
         cout << "Error" << endl;
     }
@@ -157,23 +151,19 @@ void density() {
     float ro, m, v;
     string formula;
 
-    cout << "Enter unknown parameter (p, m, v)" << endl;
+    cout << "Enter unknown parameter (p, m, v): " << endl;
     cin >> formula;
 
     if (formula == "p") {
-        cout << "Enter m: " << endl;
-        cin >> m;
-        cout << "Enter v: " << endl;
-        cin >> v;
-        cout << "p = " << m/v << endl;
+        cout << "Enter m, v: ";
+        cin >> m >> v;
+        cout << "p = " << m/v << '\n';
     } else if (formula == "m") {
-        cout << "Enter p: " << endl;
-        cin >> ro;
-        cout << "Enter v: " << endl;
-        cin >> v;
-        cout << "m = " << ro*v << endl;
+        cout << "Enter p, v: ";
+        cin >> ro, v;
+        cout << "m = " << ro*v << '\n';
     } else if (formula == "v") {
-        cout << "Enter m: " << endl;
+        cout << "Enter m, ρ: ";
         cin >> m;
         cout << "Enter p: " << endl;
         cin >> ro;
