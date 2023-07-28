@@ -35,90 +35,90 @@ int main() {
 
         switch (stoi(main_task)) {
         case 0:
-            cout << "Your choice is: 'плотность'" << endl;
+            cout << "Your choice is: 'плотность'" << '\n';
             density();
             break;
         case 1:
-            cout << "Your choice is: 'механическая_работа'" << endl;
+            cout << "Your choice is: 'механическая_работа'" << '\n';
             mechanical_work();
             break;
         case 2:
-            cout << "Your choice is: 'инерция'" << endl;
+            cout << "Your choice is: 'инерция'" << '\n';
             inertia();
             break;
         case 3:
-            cout << "Your choice is: 'средняя_скорость'" << endl;
+            cout << "Your choice is: 'средняя_скорость'" << '\n';
             average_speed();
             break;
         case 4:
-            cout << "Your choice is: 'мощность'" << endl;
+            cout << "Your choice is: 'мощность'" << '\n';
             power();
             break;
         case 5:
-            cout << "Your choice is: 'сила тяжести'" << endl;
+            cout << "Your choice is: 'сила тяжести'" << '\n';
             gravity();
             break;
         case 6:
-            cout << "Your choice is: 'сила трения'" << endl;
+            cout << "Your choice is: 'сила трения'" << '\n';
             friction_force();
             break;
         case 7:
-            cout << "Your choice is: сила 'упругости'" << endl;
+            cout << "Your choice is: сила 'упругости'" << '\n';
             elastic_force();
             break;
         case 8:
-            cout << "Your choice is: 'сила тока'" << endl;
+            cout << "Your choice is: 'сила тока'" << '\n';
             sila_toka();
             break;
         case 9:
-            cout << "Your choice is: 'Давление'" << endl;
+            cout << "Your choice is: 'Давление'" << '\n';
             pressure();
             break;
         case 10:
-            cout << "Your choice is: 'Давление в жидкостях и газах'" << endl;
+            cout << "Your choice is: 'Давление в жидкостях и газах'" << '\n';
             pressure_in_liquds();
             break;
         case 11:
-            cout << "Your choice is: 'перевод в СИ'" << endl;
+            cout << "Your choice is: 'перевод в СИ'" << '\n';
             SI_categories();
             break;
         case 12:
-            cout << "Your choice is: 'Гидравлическая машина'" << endl;
+            cout << "Your choice is: 'Гидравлическая машина'" << '\n';
             gidravlical();
             break;
         case 13:
-            cout << "Your choice is: 'Сообщающиеся сосуды'" << endl;
+            cout << "Your choice is: 'Сообщающиеся сосуды'" << '\n';
             Communicating_Vessels();
             break;
         case 14:
-            cout << "Your choice is: 'сила Архимеда'" << endl;
+            cout << "Your choice is: 'сила Архимеда'" << '\n';
             archimed();
             break;
         case 15:
-            cout << "Your choice is: 'плотность сплава'" << endl;
+            cout << "Your choice is: 'плотность сплава'" << '\n';
             Density_splava();
             break;
         case 16:
-            cout << "Your choice is: 'Потенциальная энергия'" << endl;
+            cout << "Your choice is: 'Потенциальная энергия'" << '\n';
             potential_energy();
             break;
         case 17:
-            cout << "Your choice is: 'Кинетическая энергия'" << endl;
+            cout << "Your choice is: 'Кинетическая энергия'" << '\n';
             kinetic_energy();
             break;
         case 18:
-            cout << "Your choice is: 'Упругая деформация'" << endl;
+            cout << "Your choice is: 'Упругая деформация'" << '\n';
             elastic_deform();
             break;
         case 19:
-            cout << "Your choice is: 'Закон сохранения энергии'" << endl;
+            cout << "Your choice is: 'Закон сохранения энергии'" << '\n';
             law_of_energy_conservation();
             break;
         default:
-            cout << "Invalid choice. Please enter a valid option." << endl;
+            cout << "Invalid choice. Please enter a valid option." << '\n';
             break;
         }   
-        cout << "\n" << endl;
+        cout << "\n" << '\n';
 
     }
     return 0;
@@ -128,7 +128,7 @@ void mechanical_work() {
     float A, N, t, F, V;
     string unknown;
 
-    cout << "Enter unknown value (A, N, t): " << endl;
+    cout << "Enter unknown value (A, N, t): " << '\n';
     cin >> unknown;
     if (unknown == "A") {
         cout << "Enter N, t: ";
@@ -143,7 +143,7 @@ void mechanical_work() {
         cin >> A >> N;
         cout << "t = " << N/A << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 // Define function for solving density
@@ -151,7 +151,7 @@ void density() {
     float ro, m, v;
     string formula;
 
-    cout << "Enter unknown parameter (p, m, v): " << endl;
+    cout << "Enter unknown parameter (p, m, v): " << '\n';
     cin >> formula;
 
     if (formula == "p") {
@@ -164,12 +164,10 @@ void density() {
         cout << "m = " << ro*v << '\n';
     } else if (formula == "v") {
         cout << "Enter m, ρ: ";
-        cin >> m;
-        cout << "Enter p: " << endl;
-        cin >> ro;
-        cout << "v = " << m/ro << endl;
+        cin >> m >> ro;
+        cout << "v = " << m/ro << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -183,7 +181,7 @@ void Density_splava () {
     cin >> v1;
     cout << "Enter v2(м3): ";
     cin >> v2;
-    cout << "Analysis: ρсп = (m1 + m2):(v1 + v2)\nAnswer is: ρсп = " << (m1 + m2)/(v1 + v2) << "кг/м3" << endl;
+    cout << "Analysis: ρсп = (m1 + m2):(v1 + v2)\nAnswer is: ρсп = " << (m1 + m2)/(v1 + v2) << "кг/м3" << '\n';
 }
 
 void inertia () {
@@ -194,39 +192,39 @@ void inertia () {
     cin >> formula;
 
     if (formula == "m1") {
-        cout << "Enter m2(кг): " << endl;
+        cout << "Enter m2(кг): " << '\n';
         cin >> m2;
-        cout << "Enter v1(м/с): " << endl;
+        cout << "Enter v1(м/с): " << '\n';
         cin >> v1;
-        cout << "Enter v2(м/с): " << endl;
+        cout << "Enter v2(м/с): " << '\n';
         cin >> v2;
-        cout << "m1 = " << m2*v2/v1 << endl;
+        cout << "m1 = " << m2*v2/v1 << '\n';
     } else if (formula == "m2") {
-        cout << "Enter m1(кг): " << endl;
+        cout << "Enter m1(кг): " << '\n';
         cin >> m1;
-        cout << "Enter v1(м/с): " << endl;
+        cout << "Enter v1(м/с): " << '\n';
         cin >> v1;
-        cout << "Enter v2(м/с): " << endl;
+        cout << "Enter v2(м/с): " << '\n';
         cin >> v2;
-        cout << "m2 = " << m1*v1/v2 << endl;
+        cout << "m2 = " << m1*v1/v2 << '\n';
     } else if (formula == "v1") {
-        cout << "Enter m2(кг): " << endl;
+        cout << "Enter m2(кг): " << '\n';
         cin >> m2;
-        cout << "Enter v2(м/с): " << endl;
+        cout << "Enter v2(м/с): " << '\n';
         cin >> v2;
-        cout << "Enter m1(кг): " << endl;
+        cout << "Enter m1(кг): " << '\n';
         cin >> m1;
-        cout << "v1 = " << m2*v2/m1 << endl;
+        cout << "v1 = " << m2*v2/m1 << '\n';
     } else if (formula == "v2") {
-        cout << "Enter m1(кг): " << endl;
+        cout << "Enter m1(кг): " << '\n';
         cin >> m1;
-        cout << "Enter v1(м/с): " << endl;
+        cout << "Enter v1(м/с): " << '\n';
         cin >> v1;
-        cout << "Enter m2(кг): " << endl;
+        cout << "Enter m2(кг): " << '\n';
         cin >> m2;
-        cout << "v2 = " << m1*v1/m2 << endl;
+        cout << "v2 = " << m1*v1/m2 << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 
 }
@@ -234,26 +232,26 @@ void inertia () {
 void average_speed () {
     float S1, S2, V1, V2, t1, t2;
 
-    cout << "Enter S1(м): " << endl;
+    cout << "Enter S1(м): " << '\n';
     cin >> S1;
-    cout << "Enter S2(м): " << endl;
+    cout << "Enter S2(м): " << '\n';
     cin >> S2;
     if (S1 == S2) {
-        cout << "Enter V1(м/с): " << endl;
+        cout << "Enter V1(м/с): " << '\n';
         cin >> V1;
-        cout << "Enter V2(м/с): " << endl;
+        cout << "Enter V2(м/с): " << '\n';
         cin >> V2;
-        cout << "Analysis: 2・V1・V2 : V1 + V2" << endl;
-        cout << "Vср = " << 2*V1*V2 / (V1+V2) << endl;
+        cout << "Analysis: 2・V1・V2 : V1 + V2" << '\n';
+        cout << "Vср = " << 2*V1*V2 / (V1+V2) << '\n';
     } else if (S1 != S2) {
-        cout << "Enter t1(сек): " << endl;
+        cout << "Enter t1(сек): " << '\n';
         cin >> t1;
-        cout << "Enter t2(сек): " << endl;
+        cout << "Enter t2(сек): " << '\n';
         cin >> t2;
-        cout << "Analysis: S1 + S2/t1 + t2" << endl;
-        cout << "Answer is: " << (S1+S2)/(t1+t2) << endl;
+        cout << "Analysis: S1 + S2/t1 + t2" << '\n';
+        cout << "Answer is: " << (S1+S2)/(t1+t2) << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -263,38 +261,38 @@ void power () {
     cout << "Enter unknown parameter: ";
     cin >> formula;
     if (formula == "N") {
-        cout << "Enter A(Дж): " << endl;
+        cout << "Enter A(Дж): " << '\n';
         cin >> A;
-        cout << "Enter t(сек): " << endl;
+        cout << "Enter t(сек): " << '\n';
         cin >> t;
-        cout << "Analysis: N = A / t" << endl;
-        cout << "Answer is:\nN = " << A / t << endl;
+        cout << "Analysis: N = A / t" << '\n';
+        cout << "Answer is:\nN = " << A / t << '\n';
     } else if (formula == "A") {
-        cout << "Enter N(Вт): " << endl;
+        cout << "Enter N(Вт): " << '\n';
         cin >> N;
-        cout << "Enter t(сек): " << endl;
+        cout << "Enter t(сек): " << '\n';
         cin >> t;
-        cout << "Analysis: A = N・t\nAnswer is: A = " << N*t << endl;
+        cout << "Analysis: A = N・t\nAnswer is: A = " << N*t << '\n';
     } else if (formula == "t") {
-        cout << "Enter N(Вт): " << endl;
+        cout << "Enter N(Вт): " << '\n';
         cin >> N;
-        cout << "Enter A(Дж): " << endl;
+        cout << "Enter A(Дж): " << '\n';
         cin >> A;
-        cout << "Analysis: t = A/N\nAnswer is: t = " << A/N << endl;
+        cout << "Analysis: t = A/N\nAnswer is: t = " << A/N << '\n';
     } else if (formula == "V") {
-        cout << "Enter F: " << endl;
+        cout << "Enter F: " << '\n';
         cin >> F;
-        cout << "Enter N: " << endl;
+        cout << "Enter N: " << '\n';
         cin >> N;
-        cout << "Analysis: V = N/F\nAnswer is: V = " << N/F << endl;
+        cout << "Analysis: V = N/F\nAnswer is: V = " << N/F << '\n';
     } else if (formula == "F") {
-        cout << "Enter N: " << endl;
+        cout << "Enter N: " << '\n';
         cin >> N;
-        cout << "Enter V: " << endl;
+        cout << "Enter V: " << '\n';
         cin >> V;
-        cout << "Analysis: F = N/V\nAnswer is: F = " << N/V << endl;
+        cout << "Analysis: F = N/V\nAnswer is: F = " << N/V << '\n';
     } else {
-        cout << "*Error*" << endl;
+        cout << "*Error*" << '\n';
     }
 }
 
@@ -302,23 +300,23 @@ void gravity () {
     string formula;
     float m, F, g;
 
-    cout << "Значения в H / кг:\n Меркурий 3,7\n Венера 8,9\n Земля 9,8\n Марс 3,7\n Юпитер 24,9\n Сатурн 10,6\n Уран 8,7\n Нептун 11,6\n Солнце 274\n Луна 1,6" << endl;
-    cout << "Enter unknown parameter" << endl;
+    cout << "Значения в H / кг:\n Меркурий 3,7\n Венера 8,9\n Земля 9,8\n Марс 3,7\n Юпитер 24,9\n Сатурн 10,6\n Уран 8,7\n Нептун 11,6\n Солнце 274\n Луна 1,6" << '\n';
+    cout << "Enter unknown parameter" << '\n';
     cin >> formula;
     if (formula == "F") {
-        cout << "Enter m(кг): " << endl;
+        cout << "Enter m(кг): " << '\n';
         cin >> m;
-        cout << "Enter g(м/с): " << endl;
+        cout << "Enter g(м/с): " << '\n';
         cin >> g;
-        cout << "Analysis: F = mg\nAnswer is: F = " << m*10 << endl;
+        cout << "Analysis: F = mg\nAnswer is: F = " << m*10 << '\n';
     } else if (formula == "m") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter g(м/с): " << endl;
+        cout << "Enter g(м/с): " << '\n';
         cin >> g;
-        cout << "Analysis: m = F:g\nAnswer is: m = " << F/10 << endl;
+        cout << "Analysis: m = F:g\nAnswer is: m = " << F/10 << '\n';
     } else {
-        cout << "You have to enter F or m" << endl;
+        cout << "You have to enter F or m" << '\n';
     }
 }
 
@@ -326,37 +324,37 @@ void friction_force () {
     string formula;
     float F, u, N;
 
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter" << '\n';
     cin >> formula;
     if (formula == "F") {
-        cout << "Enter μ: " << endl;
+        cout << "Enter μ: " << '\n';
         cin >> u;
-        cout << "Enter N(H): " << endl;
+        cout << "Enter N(H): " << '\n';
         cin >> N;
-        cout << "Analysis: F = μ*N\nAnswer is: F = " << u*N << endl;
+        cout << "Analysis: F = μ*N\nAnswer is: F = " << u*N << '\n';
     } else if (formula == "u") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter N(H): " << endl;
+        cout << "Enter N(H): " << '\n';
         cin >> N;
         float res = F/N;
         if (res > 1) {
-            cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << endl;
+            cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << '\n';
         } else if (res < 0) {
-            cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << endl;
+            cout << "⌀\nNo solves because μ must be more than 1 and less than 0\n0 < μ < 1" << '\n';
         } else if (res == 1) {
-            cout << "impossible be in real life" << endl;
+            cout << "impossible be in real life" << '\n';
         } else {
-            cout << "Analysis: μ = F/N\nAnswer is: μ = " << F/N << endl;
+            cout << "Analysis: μ = F/N\nAnswer is: μ = " << F/N << '\n';
         }
     } else if (formula == "N") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter μ: " << endl;
+        cout << "Enter μ: " << '\n';
         cin >> u;
-        cout << "Analysis: N = F/μ\nAnswer is: N = " << F/u << endl;
+        cout << "Analysis: N = F/μ\nAnswer is: N = " << F/u << '\n';
     } else {
-        cout << "Un recognized input" << endl;
+        cout << "Un recognized input" << '\n';
     }
 
 }
@@ -365,28 +363,28 @@ void elastic_force () {
     string formula;
     float F, k, x;
 
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter" << '\n';
     cin >> formula;
     if (formula == "F") {
-        cout << "Enter k(H/м): " << endl;
+        cout << "Enter k(H/м): " << '\n';
         cin >> k;
-        cout << "Enter △x(см): " << endl;
+        cout << "Enter △x(см): " << '\n';
         cin >> x;
-        cout << "Analysis: F = k△x\nAnswer is: F = " << k*x << endl;
+        cout << "Analysis: F = k△x\nAnswer is: F = " << k*x << '\n';
     } else if (formula == "k") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter △x(см): " << endl;
+        cout << "Enter △x(см): " << '\n';
         cin >> x;
-        cout << "Analysis: k = F/△x\nAnswer is: k = " << F/x << endl;
+        cout << "Analysis: k = F/△x\nAnswer is: k = " << F/x << '\n';
     } else if (formula == "x") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter k(H/м): " << endl;
+        cout << "Enter k(H/м): " << '\n';
         cin >> k;
-        cout << "Analysis: x = F/k\nAnswer is: x = " << F/k << endl;
+        cout << "Analysis: x = F/k\nAnswer is: x = " << F/k << '\n';
     } else {
-        cout << "Un recognized input" << endl;
+        cout << "Un recognized input" << '\n';
     }
 
 }
@@ -395,65 +393,65 @@ void sila_toka () {
     string ques, formula;
     float U, I, P, R;
 
-    cout << "Enter unknown parameter" << endl;
+    cout << "Enter unknown parameter" << '\n';
     cin >> formula;
     if (formula == "U") {
-        cout << "What is unknown" << endl;
+        cout << "What is unknown" << '\n';
         cin >> ques;
         if (ques == "I") {
-            cout << "Enter P(Вт): " << endl;
+            cout << "Enter P(Вт): " << '\n';
             cin >> P;
-            cout << "Enter R(Ω): " << endl;
+            cout << "Enter R(Ω): " << '\n';
             cin >> R;
             float U1 = P*R;
             float U2 = sqrt (U1);
-            cout << "U = " << U2 << endl;
+            cout << "U = " << U2 << '\n';
         } else if (ques == "P") {
-            cout << "Enter I(A): " << endl;
+            cout << "Enter I(A): " << '\n';
             cin >> I;
-            cout << "Enter R(Ω): " << endl;
+            cout << "Enter R(Ω): " << '\n';
             cin >> R;
             float U_2 = I*R;
-            cout << "U = " << U_2 << endl;
+            cout << "U = " << U_2 << '\n';
         } else if (ques == "R") {
-            cout << "Enter P(Вт): " << endl;
+            cout << "Enter P(Вт): " << '\n';
             cin >> P;
-            cout << "Enter I(A): " << endl;
+            cout << "Enter I(A): " << '\n';
             cin >> I;
             float U_3 = P/I;
-            cout << "U = " << U_3 << endl;
+            cout << "U = " << U_3 << '\n';
         } else {
-            cout << "Enter right value" << endl;
+            cout << "Enter right value" << '\n';
         }
 
     } else if (formula == "I") {
-        cout << "What is unknown" << endl;
+        cout << "What is unknown" << '\n';
         string quesI;
         cin >> quesI;
         if (quesI == "U") {
-            cout << "Enter P(Вт): " << endl;
+            cout << "Enter P(Вт): " << '\n';
             cin >> P;
-            cout << "Enter R(Ω): " << endl;
+            cout << "Enter R(Ω): " << '\n';
             cin >> R;
             float I1 = P/R;
             float ans = sqrt (I1);
-            cout << "I = " << ans << endl;
+            cout << "I = " << ans << '\n';
         } else if (quesI == "P") {
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
-            cout << "Enter R(Ω): " << endl;
+            cout << "Enter R(Ω): " << '\n';
             cin >> R;
             float I_2 = U/R;
-            cout << "I = " << I_2 << endl;
+            cout << "I = " << I_2 << '\n';
         } else if (quesI == "R") {
-            cout << "Enter P(Вт): " << endl;
+            cout << "Enter P(Вт): " << '\n';
             cin >> P;
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
             float I_3 = P/U;
-            cout << "I = " << I_3 << endl;
+            cout << "I = " << I_3 << '\n';
         } else {
-            cout << "Error" << endl;
+            cout << "Error" << '\n';
         }
 
     } else if (formula == "R") {
@@ -466,23 +464,23 @@ void sila_toka () {
             cout << "Enter I(A): ";
             cin >> I;
             float R1 = pow(I, 2);
-            cout << "R = " << P/R1 << endl;
+            cout << "R = " << P/R1 << '\n';
         } else if (quesR == "P") {
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
-            cout << "Enter I(A): " << endl;
+            cout << "Enter I(A): " << '\n';
             cin >> I;
             float R_2 = U/I;
-            cout << "R = " << R_2 << endl;
+            cout << "R = " << R_2 << '\n';
         } else if (quesR == "I") {
-            cout << "Enter P(Вт): " << endl;
+            cout << "Enter P(Вт): " << '\n';
             cin >> P;
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
             float RI = pow(U, 2);
-            cout << "R = " << RI/P << endl;
+            cout << "R = " << RI/P << '\n';
         } else {
-            cout << "Sorry" << endl;
+            cout << "Sorry" << '\n';
         }
     } else if (formula == "P") {
         string quesP;
@@ -494,23 +492,23 @@ void sila_toka () {
             cout << "Enter R(Ω): ";
             cin >> R;
             float PU = pow(I, 2);
-            cout << "P = " << PU/R << endl;
+            cout << "P = " << PU/R << '\n';
         } else if (quesP == "I") {
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
-            cout << "Enter R(Ω): " << endl;
+            cout << "Enter R(Ω): " << '\n';
             cin >> R;
             float PI = pow(U, 2)/R;
-            cout << "P = " << PI << endl;
+            cout << "P = " << PI << '\n';
         } else if (quesP == "R") {
-            cout << "Enter U(В): " << endl;
+            cout << "Enter U(В): " << '\n';
             cin >> U;
-            cout << "Enter I(A): " << endl;
+            cout << "Enter I(A): " << '\n';
             cin >> I;
             float PR = U*I;
-            cout << "P = " << PR << endl;
+            cout << "P = " << PR << '\n';
         } else {
-            cout << "Oops!\nSomething get wrong!" << endl;
+            cout << "Oops!\nSomething get wrong!" << '\n';
         }
     } else {
         cout << "You type wrong values";
@@ -521,28 +519,28 @@ void sila_toka () {
 void pressure () {
     string formula;
     float p, F, S;
-    cout << "Enter unknown parameter: " << endl;
+    cout << "Enter unknown parameter: " << '\n';
     cin >> formula;
     if (formula == "p") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter S(м2): " << endl;
+        cout << "Enter S(м2): " << '\n';
         cin >> S;
-        cout << "Analysis: p = F/S\nAnswer is: p = " << F/S << endl;
+        cout << "Analysis: p = F/S\nAnswer is: p = " << F/S << '\n';
     } else if (formula == "F") {
-        cout << "Enter p(Па): " << endl;
+        cout << "Enter p(Па): " << '\n';
         cin >> p;
-        cout << "Enter S(м2): " << endl;
+        cout << "Enter S(м2): " << '\n';
         cin >> S;
-        cout << "Analysis: F = p・S\nAnswer is: F = " << p*S << endl;
+        cout << "Analysis: F = p・S\nAnswer is: F = " << p*S << '\n';
     } else if (formula == "S") {
-        cout << "Enter F(H): " << endl;
+        cout << "Enter F(H): " << '\n';
         cin >> F;
-        cout << "Enter p(Па): " << endl;
+        cout << "Enter p(Па): " << '\n';
         cin >> p;
-        cout << "Analysis: S = F:p\nAnswer is: S = " << F/p << endl;
+        cout << "Analysis: S = F:p\nAnswer is: S = " << F/p << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -555,26 +553,26 @@ void length () {
         cout << "Enter length is kilometers: ";
         cin >> km;
         float length_kilometers_m = km*1000;
-        cout << "Answer is: " << length_kilometers_m << endl;
+        cout << "Answer is: " << length_kilometers_m << '\n';
     } else if (SI == "002") {
         cout << "Enter length in meters";
         cin >> m;
         float length_meters_km = m/1000;
-        cout << length_meters_km << endl;
+        cout << length_meters_km << '\n';
     } else if (SI == "003") {
-        cout << "Enter length in meters" << endl;
+        cout << "Enter length in meters" << '\n';
         cin >> m;
         float length_meters_cm = m*100;
-        cout << "Answer is: "<< length_meters_cm << endl;
+        cout << "Answer is: "<< length_meters_cm << '\n';
     } else if (SI == "004") {
-        cout << "Enter length in cm" << endl;
+        cout << "Enter length in cm" << '\n';
         cin >> cm;
         float length_centemeters_m = cm / 100;
     } else if (SI == "005") {
         cout << "Enter length in cm: ";
         cin >> cm;
         float length_centemeters_km = cm / 100000;
-        cout << "Answer is: " << length_centemeters_km << endl;
+        cout << "Answer is: " << length_centemeters_km << '\n';
     } else if (SI == "006") {
         cout << "Enter length in km: ";
         cin >> km;
@@ -584,14 +582,14 @@ void length () {
         float mm;
         cin >> mm;
         float length_mm_m = mm / 100000;
-        cout << "Answer is: " << length_mm_m << endl;
+        cout << "Answer is: " << length_mm_m << '\n';
     } else if (SI == "008") {
         cout << "Enter length in meters";
         cin >> m;
         float length_m_mm = m * 1000;
-        cout << "Answer is: " << length_m_mm << endl;
+        cout << "Answer is: " << length_m_mm << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -606,34 +604,34 @@ void time () {
         cout << "Enter time in seconds: ";
         cin >> seconds;
         float time_sec_min = seconds / 60;
-        cout << "Answer is: " << time_sec_min << endl;
+        cout << "Answer is: " << time_sec_min << '\n';
     } else if (SI_time == "002") {
         cout << "Enter time in minutes: ";
         cin >> minutes;
         float time_min_sec = minutes * 60;
-        cout << "Answer is: " << time_min_sec << endl;
+        cout << "Answer is: " << time_min_sec << '\n';
     } else if (SI_time == "004") {
         cout << "Enter time in minutes: ";
         cin >> minutes;
         float time_min_hour = minutes / 60;
-        cout << "Answer is: " << time_min_hour << endl;
+        cout << "Answer is: " << time_min_hour << '\n';
     } else if (SI_time == "003") {
         cout << "Enter time in hours: ";
         cin >> hours;
         float time_hour_min = hours * 60;
-        cout << "Answer is: " << time_hour_min << endl;
+        cout << "Answer is: " << time_hour_min << '\n';
     } else if (SI_time == "005") {
         cout << "Enter time in seconds: ";
         cin >> seconds;
         float time_sec_hour = seconds / 3600;
-        cout << "Answer is: " << time_sec_hour << endl;
+        cout << "Answer is: " << time_sec_hour << '\n';
     } else if (SI_time == "006") {
         cout << "Enter time in hours: ";
         cin >> hours;
         float time_hour_sec = hours * 3600;
-        cout << "Answer is: " << time_hour_sec << endl;
+        cout << "Answer is: " << time_hour_sec << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 //Define a mass function;
@@ -641,20 +639,20 @@ void mass () {
     string SI_mass;
     float kg, gramms;
     
-    cout << "Enter from what to what you want to convert:\nг в кг:001\nкг в г:002\n" << endl;
+    cout << "Enter from what to what you want to convert:\nг в кг:001\nкг в г:002\n" << '\n';
     cin >> SI_mass;
     if (SI_mass == "001") {
         cout << "Enter mass in gramms: ";
         cin >> gramms;
         float mass_g_kg = gramms / 1000;
-        cout << "Answer is: " << mass_g_kg<< endl;
+        cout << "Answer is: " << mass_g_kg<< '\n';
     } else if (SI_mass == "002") {
         cout << "Enter mass in kg: ";
         cin >> kg;
         float mass_kg_g = kg * 1000;
-        cout << "Answer is: " << mass_kg_g << endl;
+        cout << "Answer is: " << mass_kg_g << '\n';
     } else {
-        cout << "Sorry" << endl;
+        cout << "Sorry" << '\n';
     }
 }
 
@@ -662,35 +660,35 @@ void mass () {
 void temprature () {
     string SI_temprature;
     float celsius, farengeit, kelvin;
-    cout << "Enter from what to what you want to convert:\nCelsius in Kelvin:001\nKelvin in Celsius:002\nFarengeit in Kelvin:003\nKelvin in Farengeit:004\nCelsius in Farengeit:005" << endl;
+    cout << "Enter from what to what you want to convert:\nCelsius in Kelvin:001\nKelvin in Celsius:002\nFarengeit in Kelvin:003\nKelvin in Farengeit:004\nCelsius in Farengeit:005" << '\n';
     cin >> SI_temprature;
     if (SI_temprature == "001") {
         cout << "Enter temprature in celsius: ";
         cin >> celsius;
         float temprature_c_k = celsius + 273.15;
-        cout << "Answer is: " << temprature_c_k << endl;
+        cout << "Answer is: " << temprature_c_k << '\n';
     } else if (SI_temprature == "002") {
         cout << "Enter temprature in Kelvin: ";
         cin >> kelvin;
         float temprature_k_c = kelvin - 273.15;
-        cout << "Answer is: " << temprature_k_c << endl;
+        cout << "Answer is: " << temprature_k_c << '\n';
     } else if (SI_temprature == "003") {
         cout << "Enter temprature in Farengeit: ";
         cin >> farengeit;
         float temprature_f_k = (farengeit-32)*5/9 + 273.15;
-        cout << "Answer is: " << temprature_f_k << endl;
+        cout << "Answer is: " << temprature_f_k << '\n';
     } else if (SI_temprature == "004") {
         cout << "Enter temprature in Kelvin: ";
         cin >> kelvin;
         float temprature_k_f = (kelvin-273.15)*9/5 + 32;
-        cout << "Answer is: " << temprature_k_f << endl;
+        cout << "Answer is: " << temprature_k_f << '\n';
     } else if (SI_temprature == "005") {
         cout << "Enter temprature in celsius: ";
         cin >> celsius;
         float temprature_c_f = (celsius*9/5) + 32;
-        cout << "Answer is: " << temprature_c_f << endl;
+        cout << "Answer is: " << temprature_c_f << '\n';
     } else {
-        cout << "4o4" << endl;
+        cout << "4o4" << '\n';
     }
 }
 
@@ -705,14 +703,14 @@ void speed () {
         cout << "Enter speed in km/h: ";
         cin >> kmph;
         float speed_kmph_mps = kmph / 3.6;
-        cout << "Answer is: " << speed_kmph_mps << endl;
+        cout << "Answer is: " << speed_kmph_mps << '\n';
     } else if (SI_speed == "002") {
         cout << "Enter speed in m/s: ";
         cin >> mps;
         float speed_mps_kmph = mps * 3.6;
-        cout << "Answer is: " << speed_mps_kmph << endl;
+        cout << "Answer is: " << speed_mps_kmph << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -726,14 +724,14 @@ void volume () {
         cout << "Enter volume in cm3: ";
         cin >> cm3;
         float volume_cm3_m3 = cm3 / 1000000;
-        cout << "Answer is: " << volume_cm3_m3 << endl;
+        cout << "Answer is: " << volume_cm3_m3 << '\n';
     } else if (SI_volume == "002") {
         cout <<"Enter volume in m3: ";
         cin >> m3;
         float volume_m3_cm3 = m3 * 1000000;
-        cout << "Answer is: " << volume_m3_cm3 << endl;
+        cout << "Answer is: " << volume_m3_cm3 << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -772,23 +770,23 @@ void pressure_in_liquds () {
         cin >> ρ;
         cout << "Enter P(Па): ";
         cin >> P;
-        cout << "Analysis: h = P/ρg\nAnswer is: h = " << P/ρ*g << endl;
+        cout << "Analysis: h = P/ρg\nAnswer is: h = " << P/ρ*g << '\n';
     } else if (unexpected == "ro") {
         cout << "Enter h(м): ";
         cin >> h;
         cout << "Enter P(Па): ";
         cin >> P;
-        cout << "Analysis: ρ = P/gh\nAnswer is: ρ = " << P/g*h << endl;
+        cout << "Analysis: ρ = P/gh\nAnswer is: ρ = " << P/g*h << '\n';
     } else if (unexpected == "P") {
         cout << "Enter ρ(кг/м3): ";
         cin >> ρ;
         cout << "Enter h(м): ";
         cin >> h;
-        cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << endl;
+        cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << '\n';
     } else if (unexpected == "g") {
-        cout << "g is always 9.8 rounded to 10" << endl;
+        cout << "g is always 9.8 rounded to 10" << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -805,7 +803,7 @@ void gidravlical () {
         cin >> S1;
         cout << "Enter S2: ";
         cin >> S2;
-        cout << "Analysis: F2 = F1・S1:S2\nAnswer is: F2 = " << F1*S1/S2 << "H" << endl;
+        cout << "Analysis: F2 = F1・S1:S2\nAnswer is: F2 = " << F1*S1/S2 << "H" << '\n';
     } else if (F_input == "F1") {
         cout << "Enter F2: ";
         cin >> F2;
@@ -813,7 +811,7 @@ void gidravlical () {
         cin >> S2;
         cout << "Enter S1: ";
         cin >> S1;
-        cout << "Analysis: F1 = F2・S2:S1\nAnswer is: F1 = " << F2*S2/S1 << "H" << endl;
+        cout << "Analysis: F1 = F2・S2:S1\nAnswer is: F1 = " << F2*S2/S1 << "H" << '\n';
     } else if (F_input == "S1") {
         cout << "Enter F1: ";
         cin >> F1;
@@ -821,7 +819,7 @@ void gidravlical () {
         cin >> F2;
         cout << "Enter S2: ";
         cin >> S2;
-        cout << "Analysis: S1 = F2・S2:F1\nAnswer is: S1 = " << F2*S2/F1 << "м2" << endl;
+        cout << "Analysis: S1 = F2・S2:F1\nAnswer is: S1 = " << F2*S2/F1 << "м2" << '\n';
     } else if (F_input == "S2") {
         cout << "Enter F1: ";
         cin >> F1;
@@ -829,7 +827,7 @@ void gidravlical () {
         cin >> F2;
         cout << "Enter S1: ";
         cin >> S1;
-        cout << "Analysis: S2 = F1・S1:F2\nAnswer is: S2 = " << F1*S1/F2 << "м2" << endl;
+        cout << "Analysis: S2 = F1・S1:F2\nAnswer is: S2 = " << F1*S1/F2 << "м2" << '\n';
     } else if (F_input == "h1") {
         cout << "Enter F1: ";
         cin >> F1;
@@ -837,7 +835,7 @@ void gidravlical () {
         cin >> h2;
         cout << "Enter F2: ";
         cin >> F2;
-        cout << "Analysis: h1 = F2・h2:F1\nAnswer is: h1 = " << F2*h2/F1 << "м" << endl;
+        cout << "Analysis: h1 = F2・h2:F1\nAnswer is: h1 = " << F2*h2/F1 << "м" << '\n';
     } else if (F_input == "h2") {
         cout << "Enter F1: ";
         cin >> F1;
@@ -845,9 +843,9 @@ void gidravlical () {
         cin >> F2;
         cout << "Enter h1: ";
         cin >> h1;
-        cout << "Analysis: h2 = F1・h1:F2\nAnwer is: h2 = " << F1*h1/F2 << "м" << endl;
+        cout << "Analysis: h2 = F1・h1:F2\nAnwer is: h2 = " << F1*h1/F2 << "м" << '\n';
     } else {
-        cout << "5o5" << endl;
+        cout << "5o5" << '\n';
     }
 }
 
@@ -865,7 +863,7 @@ void Communicating_Vessels () {
         cin >> p2;
         cout << "Enter h1: ";
         cin >> h1;
-        cout << "Analysis: p1 = h2・p2:h1\nAnswer is: p1 = " << h2*p2/h1 << endl;
+        cout << "Analysis: p1 = h2・p2:h1\nAnswer is: p1 = " << h2*p2/h1 << '\n';
     } else if (unknown == "p2") {
         cout << "Enter p1: ";
         cin >> p1;
@@ -873,7 +871,7 @@ void Communicating_Vessels () {
         cin >> h1;
         cout << "Enter h2: ";
         cin >> h2;
-        cout << "Analysis: p2 = p1・h1:h2\nAnswer is: p2 = " << p1*h1/h2 << endl;
+        cout << "Analysis: p2 = p1・h1:h2\nAnswer is: p2 = " << p1*h1/h2 << '\n';
     } else if (unknown == "h2") {
         cout << "Enter p1: ";
         cin >> p1;
@@ -881,7 +879,7 @@ void Communicating_Vessels () {
         cin >> p2;
         cout << "Enter h1: ";
         cin >> h1;
-        cout << "Analysis: h2 = p1・h1:p2\nAnswer is: h2 = " << p1*h1/h2 << endl;
+        cout << "Analysis: h2 = p1・h1:p2\nAnswer is: h2 = " << p1*h1/h2 << '\n';
     } else if (unknown == "h1") {
         cout << "Enter p1: ";
         cin >> p1;
@@ -889,9 +887,9 @@ void Communicating_Vessels () {
         cin >> p2;
         cout << "Enter h2: ";
         cin >> h2;
-        cout << "Analysis: h1 = p2・h2:p1\nAnswer is: h1 = " << p2*h2/p1 << endl;
+        cout << "Analysis: h1 = p2・h2:p1\nAnswer is: h1 = " << p2*h2/p1 << '\n';
     } else {
-        cout << "Something get wrong" << endl;
+        cout << "Something get wrong" << '\n';
     }
 }
 
@@ -906,21 +904,21 @@ void archimed () {
         cin >> Fa;
         cout << "Enter V(м3): ";
         cin >> V;
-        cout << "Analysis: p = Fa:gV\nAnswer is: p = " << Fa/10*V << "кг/м3" << endl;
+        cout << "Analysis: p = Fa:gV\nAnswer is: p = " << Fa/10*V << "кг/м3" << '\n';
     } else if (Unknown == "Fa") {
         cout << "Enter p(кг/м3): ";
         cin >> p;
         cout << "Enter V(м3): ";
         cin >> V;
-        cout << "Analysis: Fa = ρgV\nAnswer is: Fa = " << p*10*V << "H" << endl;
+        cout << "Analysis: Fa = ρgV\nAnswer is: Fa = " << p*10*V << "H" << '\n';
     } else if (Unknown == "V") {
         cout << "Enter Fa(H): ";
         cin >> Fa;
         cout << "Enter p(кг/м3): ";
         cin >> p;
-        cout << "Analysis: V = Fa:ρg\nAnswer is: V = " << Fa/p*10 << "м3" << endl;
+        cout << "Analysis: V = Fa:ρg\nAnswer is: V = " << Fa/p*10 << "м3" << '\n';
     } else {
-        cout << "Error" << endl;
+        cout << "Error" << '\n';
     }
 }
 
@@ -934,21 +932,21 @@ void potential_energy() {
         cin >> m;
         cout << "Enter h(м): ";
         cin >> h;
-        cout << "Analysis: Ep = mgh\nAnswer is Ep = " << m*10*h << "[Дж]" << endl;
+        cout << "Analysis: Ep = mgh\nAnswer is Ep = " << m*10*h << "[Дж]" << '\n';
     } else if (unknown == "m") {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter h(м): ";
         cin >> h;
-        cout << "Analysis: m = Ep/gh\nAnswer is m = " << Ep/10*h << endl;
+        cout << "Analysis: m = Ep/gh\nAnswer is m = " << Ep/10*h << '\n';
     } else if (unknown == "h") {
         cout << "Enter m(кг): ";
         cin >> m;
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
-        cout << "Analysis: h = Ep/mg\nAnswer is h = " << Ep/m*10 << endl;
+        cout << "Analysis: h = Ep/mg\nAnswer is h = " << Ep/m*10 << '\n';
     } else {
-        cout << "Sorry" << endl;
+        cout << "Sorry" << '\n';
     }
 
 }
@@ -964,24 +962,24 @@ void elastic_deform() {
         cin >> k;
         cout << "Enter △x(см): ";
         cin >> x;
-        cout << "Analysis: Ep = k△x^2/2\nAnswer is Ep = " << (k*pow(x, 2))/2 << "[Дж]" << endl;
+        cout << "Analysis: Ep = k△x^2/2\nAnswer is Ep = " << (k*pow(x, 2))/2 << "[Дж]" << '\n';
     } else if (unknown == "k")
     {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter △x(см): ";
         cin >> x;
-        cout << "Analysis: k = 2・Ep/△x^2\nAnswer is k = " << 2*Ep/pow(x, 2) << "[H/м]" << endl;
+        cout << "Analysis: k = 2・Ep/△x^2\nAnswer is k = " << 2*Ep/pow(x, 2) << "[H/м]" << '\n';
     } else if (unknown == "x")
     {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter k(H/м): ";
         cin >> k;
-        cout << "Analysis: △x = √2・Ep/k\nAnswer is △x = " << sqrt(2*Ep/k) << "[см]" << endl;
+        cout << "Analysis: △x = √2・Ep/k\nAnswer is △x = " << sqrt(2*Ep/k) << "[см]" << '\n';
     } else
     {
-        cout << "you made a mistake in one parameter" << endl;
+        cout << "you made a mistake in one parameter" << '\n';
     }
 }
 
@@ -996,24 +994,24 @@ void kinetic_energy() {
         cin >> m;
         cout << "Enter V(м/с): ";
         cin >> V;
-        cout << "Analysis: Ek = m・V^2/2\nAnswer is Ek = " << (m*pow(V, 2))/2 << "[Дж]" << endl;
+        cout << "Analysis: Ek = m・V^2/2\nAnswer is Ek = " << (m*pow(V, 2))/2 << "[Дж]" << '\n';
     } else if (not_given == "m")
     {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter V(м/с): ";
         cin >> V;
-        cout << "Analysis: m = 2・Ek/V^2\nAnswer is m = " << 2*Ek/pow(V, 2) << "[кг]" << endl;
+        cout << "Analysis: m = 2・Ek/V^2\nAnswer is m = " << 2*Ek/pow(V, 2) << "[кг]" << '\n';
     } else if (not_given == "V")
     {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter m(кг): ";
         cin >> m;
-        cout << "Analysis: V = 2・Ek/m\nAnswer is V = " << sqrt(2*Ek/m) << "[м/c]" << endl;
+        cout << "Analysis: V = 2・Ek/m\nAnswer is V = " << sqrt(2*Ek/m) << "[м/c]" << '\n';
     } else
     {
-        cout << "There is a mistake" << endl;
+        cout << "There is a mistake" << '\n';
     }
 }
 
@@ -1032,12 +1030,12 @@ void law_of_energy_conservation() {
             cin >> Ek;
             cout << "Enter Ep(Дж): ";
             cin >> Ep;
-            cout << "Analysis: Em = Ek + Ep\nAnwer is Em = " << Ek + Ep << "[Дж]" << endl;
+            cout << "Analysis: Em = Ek + Ep\nAnwer is Em = " << Ek + Ep << "[Дж]" << '\n';
         } else if (yes_or_no == "n")
         {
-            cout << "There is kinetic energy" << endl;
+            cout << "There is kinetic energy" << '\n';
             kinetic_energy();
-            cout << '\n' << "There is potential energy" << endl;
+            cout << '\n' << "There is potential energy" << '\n';
             potential_energy();
         }
     } else if (unknown == "V")
@@ -1046,16 +1044,16 @@ void law_of_energy_conservation() {
         cin >> h;
         cout << "Enter g: ";
         cin >> g;
-        cout << "Analysis: √2gh\nAnwer is V = " << sqrt(2*g*h) << "[м/с]" << endl;
+        cout << "Analysis: √2gh\nAnwer is V = " << sqrt(2*g*h) << "[м/с]" << '\n';
     } else if (unknown == "h")
     {
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Enter g: ";
         cin >> g;
-        cout << "Analysis: h = V^2/2g\nAnswer is h = " << pow(V, 2)/2*g << "[м]" << endl;
+        cout << "Analysis: h = V^2/2g\nAnswer is h = " << pow(V, 2)/2*g << "[м]" << '\n';
     } else
     {
-        cout << "There is a mistake" << endl;
+        cout << "There is a mistake" << '\n';
     }
 }
