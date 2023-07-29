@@ -29,94 +29,90 @@ int main() {
     while (true) {
         string main_task;
 
-        cout << "Введите тип задачи:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, сила тока:8\nДавление:9, Давление в жидкостях и газах:10,\nперевод в СИ:11, Гидравличесская машина:12, ";
-        cout << "Сообщающиеся сосуды:13,\nсила Архимеда:14, плотность сплава:15, Потенциальная энергия:16,\nКинетичесская энергия:17, Упругая деформация:18, Закон сохранения энергии:19:\n";
+        cout << "Введите тип задачи:\nплотность:0, механическая_работа:1, инерция:2\nсредняя_скорость:3, мощность:4, сила тяжести:5,\nсила трения:6, сила упругости:7, \nДавление:8, Давление в жидкостях и газах:9,\nперевод в СИ:10, Гидравличесская машина:11, ";
+        cout << "Сообщающиеся сосуды:12,\nсила Архимеда:13, плотность сплава:14, Потенциальная энергия:15,\nКинетичесская энергия:16, Упругая деформация:17, Закон сохранения энергии:18:\n";
         cin >> main_task;
 
         switch (stoi(main_task)) {
-        case 0:
-            cout << "Your choice is: 'плотность'" << '\n';
-            density();
-            break;
-        case 1:
-            cout << "Your choice is: 'механическая_работа'" << '\n';
-            mechanical_work();
-            break;
-        case 2:
-            cout << "Your choice is: 'инерция'" << '\n';
-            inertia();
-            break;
-        case 3:
-            cout << "Your choice is: 'средняя_скорость'" << '\n';
-            average_speed();
-            break;
-        case 4:
-            cout << "Your choice is: 'мощность'" << '\n';
-            power();
-            break;
-        case 5:
-            cout << "Your choice is: 'сила тяжести'" << '\n';
-            gravity();
-            break;
-        case 6:
-            cout << "Your choice is: 'сила трения'" << '\n';
-            friction_force();
-            break;
-        case 7:
-            cout << "Your choice is: сила 'упругости'" << '\n';
-            elastic_force();
-            break;
-        case 8:
-            cout << "Your choice is: 'сила тока'" << '\n';
-            sila_toka();
-            break;
-        case 9:
-            cout << "Your choice is: 'Давление'" << '\n';
-            pressure();
-            break;
-        case 10:
-            cout << "Your choice is: 'Давление в жидкостях и газах'" << '\n';
-            pressure_in_liquds();
-            break;
-        case 11:
-            cout << "Your choice is: 'перевод в СИ'" << '\n';
-            SI_categories();
-            break;
-        case 12:
-            cout << "Your choice is: 'Гидравлическая машина'" << '\n';
-            gidravlical();
-            break;
-        case 13:
-            cout << "Your choice is: 'Сообщающиеся сосуды'" << '\n';
-            Communicating_Vessels();
-            break;
-        case 14:
-            cout << "Your choice is: 'сила Архимеда'" << '\n';
-            archimed();
-            break;
-        case 15:
-            cout << "Your choice is: 'плотность сплава'" << '\n';
-            Density_splava();
-            break;
-        case 16:
-            cout << "Your choice is: 'Потенциальная энергия'" << '\n';
-            potential_energy();
-            break;
-        case 17:
-            cout << "Your choice is: 'Кинетическая энергия'" << '\n';
-            kinetic_energy();
-            break;
-        case 18:
-            cout << "Your choice is: 'Упругая деформация'" << '\n';
-            elastic_deform();
-            break;
-        case 19:
-            cout << "Your choice is: 'Закон сохранения энергии'" << '\n';
-            law_of_energy_conservation();
-            break;
-        default:
-            cout << "Invalid choice. Please enter a valid option." << '\n';
-            break;
+            case 0:
+                cout << "Your choice is: 'плотность'" << '\n';
+                density();
+                break;
+            case 1:
+                cout << "Your choice is: 'механическая_работа'" << '\n';
+                mechanical_work();
+                break;
+            case 2:
+                cout << "Your choice is: 'инерция'" << '\n';
+                inertia();
+                break;
+            case 3:
+                cout << "Your choice is: 'средняя_скорость'" << '\n';
+                average_speed();
+                break;
+            case 4:
+                cout << "Your choice is: 'мощность'" << '\n';
+                power();
+                break;
+            case 5:
+                cout << "Your choice is: 'сила тяжести'" << '\n';
+                gravity();
+                break;
+            case 6:
+                cout << "Your choice is: 'сила трения'" << '\n';
+                friction_force();
+                break;
+            case 7:
+                cout << "Your choice is: сила 'упругости'" << '\n';
+                elastic_force();
+                break;
+            case 8:
+                cout << "Your choice is: 'Давление'" << '\n';
+                pressure();
+                break;
+            case 9:
+                cout << "Your choice is: 'Давление в жидкостях и газах'" << '\n';
+                pressure_in_liquds();
+                break;
+            case 10:
+                cout << "Your choice is: 'перевод в СИ'" << '\n';
+                SI_categories();
+                break;
+            case 11:
+                cout << "Your choice is: 'Гидравлическая машина'" << '\n';
+                gidravlical();
+                break;
+            case 12:
+                cout << "Your choice is: 'Сообщающиеся сосуды'" << '\n';
+                Communicating_Vessels();
+                break;
+            case 13:
+                cout << "Your choice is: 'сила Архимеда'" << '\n';
+                archimed();
+                break;
+            case 14:
+                cout << "Your choice is: 'плотность сплава'" << '\n';
+                Density_splava();
+                break;
+            case 15:
+                cout << "Your choice is: 'Потенциальная энергия'" << '\n';
+                potential_energy();
+                break;
+            case 16:
+                cout << "Your choice is: 'Кинетическая энергия'" << '\n';
+                kinetic_energy();
+                break;
+            case 17:
+                cout << "Your choice is: 'Упругая деформация'" << '\n';
+                elastic_deform();
+                break;
+            case 18:
+                cout << "Your choice is: 'Закон сохранения энергии'" << '\n';
+                law_of_energy_conservation();
+                break;
+            default:
+                cout << "Invalid choice. Please enter a valid option." << '\n';
+                break;
         }   
         cout << "\n" << '\n';
 
