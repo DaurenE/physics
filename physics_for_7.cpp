@@ -598,22 +598,16 @@ void pressure_in_liquds () {
     cout << "Enter unknown parameter: ";
     cin >> unexpected;
     if (unexpected == "h") {
-        cout << "Enter ρ(кг/м3): ";
-        cin >> ρ;
-        cout << "Enter P(Па): ";
-        cin >> P;
+        cout << "Enter ρ, P: ";
+        cin >> ρ >> P;
         cout << "Analysis: h = P/ρg\nAnswer is: h = " << P/ρ*g << '\n';
     } else if (unexpected == "ro") {
-        cout << "Enter h(м): ";
-        cin >> h;
-        cout << "Enter P(Па): ";
-        cin >> P;
+        cout << "Enter P, h";
+        cin >> P >> h;
         cout << "Analysis: ρ = P/gh\nAnswer is: ρ = " << P/g*h << '\n';
     } else if (unexpected == "P") {
-        cout << "Enter ρ(кг/м3): ";
-        cin >> ρ;
-        cout << "Enter h(м): ";
-        cin >> h;
+        cout << "Enter ρ, h: ";
+        cin >> ρ >> h;
         cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << '\n';
     } else if (unexpected == "g") {
         cout << "g is always 9.8 rounded to 10" << '\n';
