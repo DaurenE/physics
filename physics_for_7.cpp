@@ -12,7 +12,6 @@ void power();
 void gravity();
 void friction_force();
 void elastic_force();
-void sila_toka();
 void pressure();
 void pressure_in_liquds();
 void SI_categories();
