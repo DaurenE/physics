@@ -577,10 +577,8 @@ void SI_categories () {
     } else if (categories == "3") {
         mass();
     } else if (categories == "4") {
-        temprature();
-    } else if (categories == "5") {
         speed();
-    } else if (categories == "6") {
+    } else if (categories == "5") {
         volume();
     }
 
@@ -589,7 +587,7 @@ void SI_categories () {
 
 void pressure_in_liquds () {
     string unexpected;
-    float ρ, g = 10, P, h;
+    float ρ, g, P, h;
     cout << "Enter unknown parameter: ";
     cin >> unexpected;
     if (unexpected == "h") {
@@ -605,7 +603,9 @@ void pressure_in_liquds () {
         cin >> ρ >> h;
         cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << '\n';
     } else if (unexpected == "g") {
-        cout << "g is always 9.8 rounded to 10" << '\n';
+        cout << "Enter ρ, P, h: ";
+        cin >> ρ >> P >> h;
+        cout << "Analisys: g = P/ρh\nAnswer is: " << P/ρ*h << '\n';
     } else {
         cout << "Error" << '\n';
     }
