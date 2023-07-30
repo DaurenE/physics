@@ -577,10 +577,8 @@ void SI_categories () {
     } else if (categories == "3") {
         mass();
     } else if (categories == "4") {
-        temprature();
-    } else if (categories == "5") {
         speed();
-    } else if (categories == "6") {
+    } else if (categories == "5") {
         volume();
     }
 
