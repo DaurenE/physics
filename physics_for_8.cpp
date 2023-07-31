@@ -362,7 +362,7 @@ void Optical_power_of_the_lens() {
         cin >> D;
         cout << "Analisys: F = 1/D\nAnswer is: " << 1/D << "[H]\n";
     } else {
-        cout << "we got a problem";
+        cout << "we got a problem" << '\n';
     }
 }
 /*
