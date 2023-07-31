@@ -32,6 +32,10 @@ int main() {
         cout << "Сообщающиеся сосуды:12,\nсила Архимеда:13, плотность сплава:14, Потенциальная энергия:15,\nКинетичесская энергия:16, Упругая деформация:17, Закон сохранения энергии:18:\n";
         cin >> main_task;
 
+        if (main_task == "stop") {
+            break;
+        }
+
         switch (stoi(main_task)) {
             case 0:
                 cout << "Your choice is: 'плотность'" << '\n';
@@ -237,7 +241,7 @@ void average_speed () {
 void power () {
     string formula;
     float A, t, N, F, V;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (N, A, t, V, F): ";
     cin >> formula;
     if (formula == "N") {
         cout << "Enter A(Дж), t(сек): " << '\n';
@@ -270,7 +274,7 @@ void gravity () {
     float m, F, g;
 
     cout << "Значения в H / кг:\n Меркурий 3,7\n Венера 8,9\n Земля 9,8\n Марс 3,7\n Юпитер 24,9\n Сатурн 10,6\n Уран 8,7\n Нептун 11,6\n Солнце 274\n Луна 1,6" << '\n';
-    cout << "Enter unknown parameter" << '\n';
+    cout << "Enter unknown parameter(F, m, g)" << '\n';
     cin >> formula;
     if (formula == "F") {
         cout << "Enter m(кг): " << '\n';
@@ -295,7 +299,7 @@ void friction_force () {
     string formula;
     float F, u, N;
 
-    cout << "Enter unknown parameter" << '\n';
+    cout << "Enter unknown parameter (F, μ, N)" << '\n';
     cin >> formula;
     if (formula == "F") {
         cout << "Enter μ, N: " << '\n';
@@ -328,7 +332,7 @@ void elastic_force () {
     string formula;
     float F, k, x;
 
-    cout << "Enter unknown parameter" << '\n';
+    cout << "Enter unknown parameter (F, k, △x)" << '\n';
     cin >> formula;
     if (formula == "F") {
         cout << "Enter k(H/м), △x(см): ";
@@ -352,7 +356,7 @@ void elastic_force () {
 void pressure () {
     string formula;
     float p, F, S;
-    cout << "Enter unknown parameter: " << '\n';
+    cout << "Enter unknown parameter (p, F, S): " << '\n';
     cin >> formula;
     if (formula == "p") {
         cout << "Enter F(H), S: " << '\n';
@@ -588,7 +592,7 @@ void SI_categories () {
 void pressure_in_liquds () {
     string unexpected;
     float ρ, g, P, h;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (h, g, P, ρ): ";
     cin >> unexpected;
     if (unexpected == "h") {
         cout << "Enter ρ, P: ";
@@ -615,7 +619,7 @@ void gidravlical () {
     string F_input;
     float F1, S1, S2, h1, h2, F2;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (F1, F2, S1, S2, h1, h2): ";
     cin >> F_input;
     if (F_input == "F2") {
         cout << "Enter F1, S1, S2: ";
@@ -652,7 +656,7 @@ void Communicating_Vessels () {
     string unknown;
     float h2, p2, h1, p1;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (p1, h1, p2, h2): ";
     cin >> unknown;
     if (unknown == "p1") {
         cout << "Enter h2, p2, h1: ";
@@ -679,7 +683,7 @@ void archimed () {
     string Unknown;
     float p, Fa, V;
 
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (p, FA, V): ";
     cin >> Unknown;
     if (Unknown == "p") {
         cout << "Enter Fa(H): ";
@@ -707,7 +711,7 @@ void archimed () {
 void potential_energy() {
     string unknown;
     float m, h, Ep;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (m, h, Ep): ";
     cin >> unknown;
     if (unknown == "Ep") {
         cout << "Enter m(кг): ";
@@ -736,31 +740,27 @@ void potential_energy() {
 void elastic_deform() {
     string unknown;
     float k, x, Ep;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (k, △x, Ep): ";
     cin >> unknown;
-    if (unknown == "Ep")
-    {
+    if (unknown == "Ep") {
         cout << "Enter k(H/м): ";
         cin >> k;
         cout << "Enter △x(см): ";
         cin >> x;
         cout << "Analysis: Ep = k△x^2/2\nAnswer is Ep = " << (k*pow(x, 2))/2 << "[Дж]" << '\n';
-    } else if (unknown == "k")
-    {
+    } else if (unknown == "k") {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter △x(см): ";
         cin >> x;
         cout << "Analysis: k = 2・Ep/△x^2\nAnswer is k = " << 2*Ep/pow(x, 2) << "[H/м]" << '\n';
-    } else if (unknown == "x")
-    {
+    } else if (unknown == "x") {
         cout << "Enter Ep(Дж): ";
         cin >> Ep;
         cout << "Enter k(H/м): ";
         cin >> k;
         cout << "Analysis: △x = √2・Ep/k\nAnswer is △x = " << sqrt(2*Ep/k) << "[см]" << '\n';
-    } else
-    {
+    } else {
         cout << "you made a mistake in one parameter" << '\n';
     }
 }
@@ -768,31 +768,27 @@ void elastic_deform() {
 void kinetic_energy() {
     string not_given;
     float m, V, Ek;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (m, V, Ek): ";
     cin >> not_given;
-    if (not_given == "Ek")
-    {
+    if (not_given == "Ek") {
         cout << "Enter m(кг): ";
         cin >> m;
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Analysis: Ek = m・V^2/2\nAnswer is Ek = " << (m*pow(V, 2))/2 << "[Дж]" << '\n';
-    } else if (not_given == "m")
-    {
+    } else if (not_given == "m") {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Analysis: m = 2・Ek/V^2\nAnswer is m = " << 2*Ek/pow(V, 2) << "[кг]" << '\n';
-    } else if (not_given == "V")
-    {
+    } else if (not_given == "V") {
         cout << "Enter Ek(Дж): ";
         cin >> Ek;
         cout << "Enter m(кг): ";
         cin >> m;
         cout << "Analysis: V = 2・Ek/m\nAnswer is V = " << sqrt(2*Ek/m) << "[м/c]" << '\n';
-    } else
-    {
+    } else {
         cout << "There is a mistake" << '\n';
     }
 }
@@ -800,42 +796,36 @@ void kinetic_energy() {
 void law_of_energy_conservation() {
     string unknown, yes_or_no;
     float Ek, Ep, Em, V, h, m, g;
-    cout << "Enter unknown parameter: ";
+    cout << "Enter unknown parameter (Ek, Ep, Em, V, h, m, g): ";
     cin >> unknown;
-    if (unknown == "Em")
-    {
+    if (unknown == "Em") {
         cout << "Do you know Ek and Ep?(y/n): ";
         cin >> yes_or_no;
-        if (yes_or_no == "y")
-        {
+        if (yes_or_no == "y") {
             cout << "Enter Ek(Дж): ";
             cin >> Ek;
             cout << "Enter Ep(Дж): ";
             cin >> Ep;
             cout << "Analysis: Em = Ek + Ep\nAnwer is Em = " << Ek + Ep << "[Дж]" << '\n';
-        } else if (yes_or_no == "n")
-        {
+        } else if (yes_or_no == "n") {
             cout << "There is kinetic energy" << '\n';
             kinetic_energy();
             cout << '\n' << "There is potential energy" << '\n';
             potential_energy();
         }
-    } else if (unknown == "V")
-    {
+    } else if (unknown == "V") {
         cout << "Enter h(м): ";
         cin >> h;
         cout << "Enter g: ";
         cin >> g;
         cout << "Analysis: √2gh\nAnwer is V = " << sqrt(2*g*h) << "[м/с]" << '\n';
-    } else if (unknown == "h")
-    {
+    } else if (unknown == "h") {
         cout << "Enter V(м/с): ";
         cin >> V;
         cout << "Enter g: ";
         cin >> g;
         cout << "Analysis: h = V^2/2g\nAnswer is h = " << pow(V, 2)/2*g << "[м]" << '\n';
-    } else
-    {
+    } else {
         cout << "There is a mistake" << '\n';
     }
 }
