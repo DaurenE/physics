@@ -1,29 +1,49 @@
 #include <iostream>
 #include <string>
 
-using namespace std;
+using namespace std; // Используем пространство имен std
 
 void authorization() {
-    string email, user_name, password, symbol;
+    while (true) {
+        string email, password, user_name;
+        char password_level;
 
-    size_t found_item = email.find_first_of(symbol);
-    symbol = '@';
-    cout << "Enter Email (example.email@gmail.com): ";
-    cin >> email;
-    if (found_item != string::npos) {
-        cout << "access is allowed" << '\n';
-    } else {
-        cout << "Try again" << '\n';
-    }
-    cout << "\nEnter user name: ";
-    cin >> user_name;
+        cout << "Enter Email (example.email@gmail.com): ";
+        cin >> email;
+
+        size_t found_item = email.find('@');
+
+        if (found_item != string::npos) {
+            cout << "Access is allowed" << '\n';
+        } else {
+            cout << "Try again" << '\n';
+            continue; // Начинаем цикл с начала, если символ '@' не найден
+        }
     
-    size_t length = password.length();
-    cout << "\nEnter password: ";
-    cin >> password;
+        cout << "Enter user name: ";
+        cin >> user_name;
+    
+        do {
+            cout << "Enter password (minimum 8 characters): ";
+            cin >> password;
+            
+            if (password.length() < 8) {
+                cout << "Password must be at least 8 characters long.\nPlease try again.\n";
+            }
+        } while (password.length() < 8);
 
-    if (length < 8) {
-        cout << "password have to be more than 7" << '\n';
+        if (password == "13246578") {
+            cout << "This password is too easy. Do you want to keep it? (y/n): ";
+            cin >> password_level;
+            if (password_level == 'y' || password_level == 'Y') {
+                break;
+            } else {
+                continue;
+            }
+        }
+
+        cout << "Authorization successful!" << '\n';
+        break;
     }
 }
 
