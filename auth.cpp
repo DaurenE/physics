@@ -32,7 +32,7 @@ void authorization() {
             }
         } while (password.length() < 8);
 
-        if (password == "13246578") {
+        if (password == "12346578") {
             cout << "This password is too easy. Do you want to keep it? (y/n): ";
             cin >> password_level;
             if (password_level == 'y' || password_level == 'Y') {
