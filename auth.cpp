@@ -1,7 +1,7 @@
 #include <iostream>
 #include <string>
 
-using namespace std; // Используем пространство имен std
+using namespace std;
 
 void authorization() {
     while (true) {
@@ -17,12 +17,12 @@ void authorization() {
             cout << "Access is allowed" << '\n';
         } else {
             cout << "Try again" << '\n';
-            continue; // Начинаем цикл с начала, если символ '@' не найден
+            continue;
         }
     
         cout << "Enter user name: ";
         cin >> user_name;
-    
+
         do {
             cout << "Enter password (minimum 8 characters): ";
             cin >> password;
@@ -37,7 +37,10 @@ void authorization() {
             cin >> password_level;
             if (password_level == 'y' || password_level == 'Y') {
                 break;
+            } else if (password_level == 'n' || password_level == 'N') {
+                continue;
             } else {
+                cout << "Invalid input. Assuming 'n' (No).\n";
                 continue;
             }
         }
