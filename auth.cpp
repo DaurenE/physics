@@ -6,7 +6,6 @@ using namespace std;
 void authorization() {
     while (true) {
         string email, password, user_name;
-        char password_level;
 
         cout << "Enter Email (example.email@gmail.com): ";
         cin >> email;
@@ -33,19 +32,27 @@ void authorization() {
         } while (password.length() < 8);
 
         if (password == "12345678") {
-            cout << "This password is too easy. Do you want to keep it? (y/n): ";
-            cin >> password_level;
-            if (password_level == 'y' || password_level == 'Y') {
-                break;
-            } else if (password_level == 'n' || password_level == 'N') {
-                break;
-            } else {
-                cout << "Invalid input. Assuming 'n' (No).\n";
-                continue;
-            }
+            char password_level;
+            do {
+                cout << "This password is too easy. Do you want to keep it? (y/n): ";
+                cin >> password_level;
+                if (password_level == 'y' || password_level == 'Y') {
+                    cout << "Authorization successful!" << '\n';
+                    return; // Завершаем функцию и программу после успешной авторизации
+                } else if (password_level == 'n' || password_level == 'N') {
+                    cout << "Enter password (minimum 8 characters): ";
+                    cin >> password;
+                    
+                    break; // Переходим к повторному вводу пароля
+                } else {
+                    cout << "Invalid input. Assuming 'n' (No).\n";
+                    cout << "Please try again.\n";
+                }
+            } while (true);
+        } else {
+            cout << "Authorization successful!" << '\n';
         }
 
-        cout << "Authorization successful!" << '\n';
         break;
     }
 }
