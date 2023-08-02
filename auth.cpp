@@ -38,7 +38,7 @@ void authorization() {
             if (password_level == 'y' || password_level == 'Y') {
                 break;
             } else if (password_level == 'n' || password_level == 'N') {
-                continue;
+                break;
             } else {
                 cout << "Invalid input. Assuming 'n' (No).\n";
                 continue;
