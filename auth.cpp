@@ -42,7 +42,6 @@ void authorization() {
                 } else if (password_level == 'n' || password_level == 'N') {
                     cout << "Enter password (minimum 8 characters): ";
                     cin >> password;
-                    
                     break; // Переходим к повторному вводу пароля
                 } else {
                     cout << "Invalid input. Assuming 'n' (No).\n";
