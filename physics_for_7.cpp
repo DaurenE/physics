@@ -592,19 +592,19 @@ void SI_categories () {
 void pressure_in_liquds () {
     string unexpected;
     float ρ, g, P, h;
-    cout << "Enter unknown parameter (h, g, P, ρ): ";
+    cout << "Enter unknown parameter (h, g, P, ro(ρ)): ";
     cin >> unexpected;
     if (unexpected == "h") {
-        cout << "Enter ρ, P: ";
-        cin >> ρ >> P;
+        cout << "Enter ρ, P, g: ";
+        cin >> ρ >> P >> g;
         cout << "Analysis: h = P/ρg\nAnswer is: h = " << P/ρ*g << '\n';
     } else if (unexpected == "ro") {
         cout << "Enter P, h";
-        cin >> P >> h;
+        cin >> P >> h >> g;
         cout << "Analysis: ρ = P/gh\nAnswer is: ρ = " << P/g*h << '\n';
     } else if (unexpected == "P") {
-        cout << "Enter ρ, h: ";
-        cin >> ρ >> h;
+        cout << "Enter ρ, h, g: ";
+        cin >> ρ >> h >> g;
         cout << "Analysis: P = ρgh\nAnswer is: P = " << ρ*g*h << '\n';
     } else if (unexpected == "g") {
         cout << "Enter ρ, P, h: ";
