@@ -342,15 +342,15 @@ void Coulombs_law() {
 }
 
 void JouleLenz_law () {
-    cout << "Q = I^2*R*t\nQ = U*I*t\nQ = P*t\nQ = U^2/R*t";
+    cout << "Q = I^2*R*t\nQ = U*I*t\nQ = P*t\nQ = U^2/R*t\n";
 }
 
 void Law_of_light_reflection() {
-    cout << "α = β [град]";
+    cout << "α = β [град]\n";
 }
 
 void Law_of_refraction_of_light() {
-    cout << "sin α/sin β = n";
+    cout << "sin α/sin β = n\n";
 }
 
 void Optical_power_of_the_lens() {
