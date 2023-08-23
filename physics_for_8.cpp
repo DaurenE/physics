@@ -65,7 +65,7 @@ int main() {
                 Optical_power_of_the_lens();
                 break;
             default:
-                cout << "Неверное значение\n";
+                cout << "Invalid\n";
                 break;
         }
         cout << "\n\n";
