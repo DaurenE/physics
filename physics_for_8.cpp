@@ -65,6 +65,7 @@ int main() {
                 Optical_power_of_the_lens();
                 break;
         }
+        cout << "\n\n";
 	}
 }
 
