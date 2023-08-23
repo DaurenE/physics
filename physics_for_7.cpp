@@ -125,22 +125,22 @@ int main() {
 
 void mechanical_work() {
     float A, N, t, F, V;
-    string неизвестный;
+    string unknown;
 
     cout << "Введите неизвестный параметр (A, N, t): " << '\n';
-    cin >> неизвестный;
-    if (неизвестный == "A") {
+    cin >> unknown;
+    if (unknown == "A") {
         cout << "Введите N, t: ";
         cin >> N >> t;
-        cout << "A = " << N/t << '\n';
-    } else if (неизвестный == "N") {
+        cout << "A = " << N/t << "[Дж]" << '\n';
+    } else if (unknown == "N") {
         cout << "Введите A, t: ";
         cin >> A >> t;
-        cout << "N = " << A/t << '\n';
-    } else if (неизвестный == "t") {
+        cout << "N = " << A/t << "[Вт]" << '\n';
+    } else if (unknown == "t") {
         cout << "Введите A, N: ";
         cin >> A >> N;
-        cout << "t = " << N/A << '\n';
+        cout << "t = " << N/A << "[сек]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -154,17 +154,17 @@ void density() {
     cin >> formula;
 
     if (formula == "p") {
-        cout << "Введите m, v: ";
+        cout << "Введите m(кг), v(м3): ";
         cin >> m >> v;
-        cout << "p = " << m/v << '\n';
+        cout << "p = " << m/v << "[кг/м3]" << '\n';
     } else if (formula == "m") {
-        cout << "Введите p, v: ";
+        cout << "Введите p(кг/м3), v(м3): ";
         cin >> ro, v;
-        cout << "m = " << ro*v << '\n';
+        cout << "m = " << ro*v << "[кг]" << '\n';
     } else if (formula == "v") {
         cout << "Введите m, ρ: ";
         cin >> m >> ro;
-        cout << "v = " << m/ro << '\n';
+        cout << "v = " << m/ro << "[м3]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -180,7 +180,7 @@ void Density_splava () {
     cin >> v1;
     cout << "Введите v2(м3): ";
     cin >> v2;
-    cout << "Анализ: ρсп = (m1 + m2):(v1 + v2)\nОтвет: ρсп = " << (m1 + m2)/(v1 + v2) << "кг/м3" << '\n';
+    cout << "Анализ: ρсп = (m1 + m2):(v1 + v2)\nОтвет: ρсп = " << (m1 + m2)/(v1 + v2) << "[кг/м3]" << '\n';
 }
 
 void inertia () {
@@ -247,23 +247,23 @@ void power () {
         cout << "Введите A(Дж), t(сек): " << '\n';
         cin >> A >> t;
         cout << "Анализ: N = A / t" << '\n';
-        cout << "Ответ:\nN = " << A / t << '\n';
+        cout << "Ответ:\nN = " << A / t << "[Вт]" << '\n';
     } else if (formula == "A") {
         cout << "Введите N(Вт), t(сек): " << '\n';
         cin >> N >> t;
-        cout << "Анализ: A = N・t\nОтвет: A = " << N*t << '\n';
+        cout << "Анализ: A = N・t\nОтвет: A = " << N*t << "[Дж]" << '\n';
     } else if (formula == "t") {
         cout << "Введите N(Вт), A(Дж): " << '\n';
         cin >> N >> A;
-        cout << "Анализ: t = A/N\nОтвет: t = " << A/N << '\n';
+        cout << "Анализ: t = A/N\nОтвет: t = " << A/N << "[сек]" << '\n';
     } else if (formula == "V") {
-        cout << "Введите F, N: " << '\n';
+        cout << "Введите F(Н), N(Вт): " << '\n';
         cin >> F, N;
-        cout << "Анализ: V = N/F\nОтвет: V = " << N/F << '\n';
+        cout << "Анализ: V = N/F\nОтвет: V = " << N/F << "[м/с]" << '\n';
     } else if (formula == "F") {
-        cout << "Введите N, V: " << '\n';
+        cout << "Введите N(Вт), V(м/с): " << '\n';
         cin >> N >> V;
-        cout << "Анализ: F = N/V\nОтвет: F = " << N/V << '\n';
+        cout << "Анализ: F = N/V\nОтвет: F = " << N/V << "[H]" << '\n';
     } else {
         cout << "*Error*" << '\n';
     }
@@ -281,17 +281,19 @@ void gravity () {
         cin >> m;
         cout << "Введите g(м/с): " << '\n';
         cin >> g;
-        cout << "Анализ: F = mg\nОтвет: F = " << m*g << '\n';
+        cout << "Анализ: F = mg\nОтвет: F = " << m*g << "[H]" << '\n';
     } else if (formula == "m") {
         cout << "Введите F(H): " << '\n';
         cin >> F;
         cout << "Введите g(м/с): " << '\n';
         cin >> g;
-        cout << "Анализ: m = F:g\nОтвет: m = " << F/g << '\n';
+        cout << "Анализ: m = F:g\nОтвет: m = " << F/g << "[кг]" << '\n';
     } else if (formula == "g") {
         cout << "Введите F , m: ";
         cin >> F >> m;
-        cout << "Анализ: m = F:g\nОтвет: m = " << F/m << '\n';
+        cout << "Анализ: m = F:g\nОтвет: m = " << F/m << "[м/с2]" << '\n';
+    } else {
+        cout << "Error\n";
     }
 }
 
@@ -304,26 +306,24 @@ void friction_force () {
     if (formula == "F") {
         cout << "Введите μ, N: " << '\n';
         cin >> u >> N;
-        cout << "Анализ: F = μ*N\nОтвет: F = " << u*N << '\n';
+        cout << "Анализ: F = μ*N\nОтвет: F = " << u*N << "[H]" << '\n';
     } else if (formula == "u") {
         cout << "Введите F, N: " << '\n';
         cin >> F >> N;
         float res = F/N;
-        if (res > 1) {
-            cout << "⌀\nНет решений так как μ must be less than 1 and more than 0\n0 < μ < 1" << '\n';
-        } else if (res < 0) {
-            cout << "⌀\nНет решений так как μ must be less than 1 and more than 0\n0 < μ < 1" << '\n';
+        if (res > 1 || res < 0) {
+            cout << "⌀\nНет решений так как μ должен быть меньшес1 и больше 0\n0 < μ < 1" << '\n';
         } else if (res == 1) {
-            cout << "impossible be in real life" << '\n';
+            cout << "Невозможно в реальности" << '\n';
         } else {
             cout << "Анализ: μ = F/N\nОтвет: μ = " << F/N << '\n';
         }
     } else if (formula == "N") {
         cout << "Введите F, μ: " << '\n';
         cin >> F >> u;
-        cout << "Анализ: N = F/μ\nОтвет: N = " << F/u << '\n';
+        cout << "Анализ: N = F/μ\nОтвет: N = " << F/u << "[H]" << '\n';
     } else {
-        cout << "Un recognized input" << '\n';
+        cout << "Error" << '\n';
     }
 
 }
@@ -337,17 +337,17 @@ void elastic_force () {
     if (formula == "F") {
         cout << "Введите k(H/м), △x(см): ";
         cin >> k >> x;
-        cout << "Анализ: F = k△x\nОтвет: F = " << k*x << '\n';
+        cout << "Анализ: F = k△x\nОтвет: F = " << k*x << "[H]" << '\n';
     } else if (formula == "k") {
         cout << "Введите F, △x: ";
         cin >> F >> x;
-        cout << "Анализ: k = F/△x\nОтвет: k = " << F/x << '\n';
+        cout << "Анализ: k = F/△x\nОтвет: k = " << F/x << "[Н/м]" << '\n';
     } else if (formula == "x") {
         cout << "Введите F, k: ";
         cin >> F >> k;
-        cout << "Анализ: x = F/k\nОтвет: x = " << F/k << '\n';
+        cout << "Анализ: x = F/k\nОтвет: x = " << F/k << "[s]" << '\n';
     } else {
-        cout << "Un recognized input" << '\n';
+        cout << "Error" << '\n';
     }
 
 }
@@ -361,15 +361,15 @@ void pressure () {
     if (formula == "p") {
         cout << "Введите F(H), S: " << '\n';
         cin >> F >> S;
-        cout << "Анализ: p = F/S\nОтвет: p = " << F/S << '\n';
+        cout << "Анализ: p = F/S\nОтвет: p = " << F/S << "[Па]" << '\n';
     } else if (formula == "F") {
         cout << "Введите ρ(Па), S: " << '\n';
         cin >> p >> S;
-        cout << "Анализ: F = p・S\nОтвет: F = " << p*S << '\n';
+        cout << "Анализ: F = p・S\nОтвет: F = " << p*S << "[Н]" << '\n';
     } else if (formula == "S") {
         cout << "Введите F(H), ρ: " << '\n';
         cin >> F >> p;
-        cout << "Анализ: S = F:p\nОтвет: S = " << F/p << '\n';
+        cout << "Анализ: S = F:p\nОтвет: S = " << F/p << "[м2]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -378,47 +378,49 @@ void pressure () {
 void length () {
     string SI;
     float km, m, cm, mm;
-    cout << "Введите из чего во что хотите перевести:\nкм в м:001\nм в км:002\nм в см:003\nсм в м:004\nсм в км:005\nкм в см:006\nмм в м:007\nм в мм:008";
+    cout << "Введите из чего во что хотите перевести:\nкм в м | 001\nм в км | 002\nм в см | 003\nсм в м | 004\nсм в км | 005\nкм в см | 006\nмм в м | 007\nм в мм | 008";
     cin >> SI;
     if (SI == "001") {
-        cout << "Введите длину в kilometers: ";
+        cout << "Введите длину в километрах: ";
         cin >> km;
         float length_kilometers_m = km*1000;
-        cout << "Ответ: " << length_kilometers_m << '\n';
+        cout << "Ответ: " << length_kilometers_m << "[м]" << '\n';
     } else if (SI == "002") {
         cout << "Введите длину в метрах";
         cin >> m;
         float length_meters_km = m/1000;
-        cout << length_meters_km << '\n';
+        cout << "Ответ: " << length_meters_km << "[км]" << '\n';
     } else if (SI == "003") {
         cout << "Введите длину в метрах" << '\n';
         cin >> m;
         float length_meters_cm = m*100;
-        cout << "Ответ: "<< length_meters_cm << '\n';
+        cout << "Ответ: "<< length_meters_cm << "[cм]" << '\n';
     } else if (SI == "004") {
         cout << "Введите длину в cm" << '\n';
         cin >> cm;
         float length_centemeters_m = cm / 100;
+        cout << "Ответ: " << length_centemeters_m << "[м]" << '\n';
     } else if (SI == "005") {
         cout << "Введите длину в cm: ";
         cin >> cm;
         float length_centemeters_km = cm / 100000;
-        cout << "Ответ: " << length_centemeters_km << '\n';
+        cout << "Ответ: " << length_centemeters_km << "[км]" << '\n';
     } else if (SI == "006") {
         cout << "Введите длину в km: ";
         cin >> km;
         float length_kilometers_cm = km * 100000;
+        cout << "Ответ: " << length_kilometers_cm << "[см]" << '\n';
     } else if (SI == "007") {
         cout << "Введите длину в mm: ";
         float mm;
         cin >> mm;
         float length_mm_m = mm / 100000;
-        cout << "Ответ: " << length_mm_m << '\n';
+        cout << "Ответ: " << length_mm_m << "[м]" << '\n';
     } else if (SI == "008") {
         cout << "Введите длину в метрах";
         cin >> m;
         float length_m_mm = m * 1000;
-        cout << "Ответ: " << length_m_mm << '\n';
+        cout << "Ответ: " << length_m_mm << "[мм]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -429,38 +431,38 @@ void time () {
     string SI_time;
     float seconds, minutes, hours;
     
-    cout << "Введите из чего во что хотите перевести:\nсек в мин:001\nмин в сек:002\nч в мин:003\nмин в ч:004\nсек в ч:005\nч в сен:006";
+    cout << "Введите из чего во что хотите перевести:\nсек в мин | 001\nмин в сек | 002\nч в мин | 003\nмин в ч | 004\nсек в ч | 005\nч в сек | 006";
     cin >> SI_time;
     if (SI_time == "001") {
         cout << "Введите время в секундах: ";
         cin >> seconds;
         float time_sec_min = seconds / 60;
-        cout << "Ответ: " << time_sec_min << '\n';
+        cout << "Ответ: " << time_sec_min << "[мин]" << '\n';
     } else if (SI_time == "002") {
         cout << "Введите время в минутах: ";
         cin >> minutes;
         float time_min_sec = minutes * 60;
-        cout << "Ответ: " << time_min_sec << '\n';
+        cout << "Ответ: " << time_min_sec << "[сек]" << '\n';
     } else if (SI_time == "004") {
         cout << "Введите время в минутах: ";
         cin >> minutes;
         float time_min_hour = minutes / 60;
-        cout << "Ответ: " << time_min_hour << '\n';
+        cout << "Ответ: " << time_min_hour << "[ч]" << '\n';
     } else if (SI_time == "003") {
         cout << "Введите время в часах: ";
         cin >> hours;
         float time_hour_min = hours * 60;
-        cout << "Ответ: " << time_hour_min << '\n';
+        cout << "Ответ: " << time_hour_min << "[мин]" << '\n';
     } else if (SI_time == "005") {
         cout << "Введите время в секундах: ";
         cin >> seconds;
         float time_sec_hour = seconds / 3600;
-        cout << "Ответ: " << time_sec_hour << '\n';
+        cout << "Ответ: " << time_sec_hour << "[ч]" << '\n';
     } else if (SI_time == "006") {
-        cout << "Введите время в hours: ";
+        cout << "Введите время в часах: ";
         cin >> hours;
         float time_hour_sec = hours * 3600;
-        cout << "Ответ: " << time_hour_sec << '\n';
+        cout << "Ответ: " << time_hour_sec << "[сек]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -470,56 +472,20 @@ void mass () {
     string SI_mass;
     float kg, gramms;
     
-    cout << "Введите из чего во что хотите перевести:\nг в кг:001\nкг в г:002\n" << '\n';
+    cout << "Введите из чего во что хотите перевести:\nг в кг | 001\nкг в г | 002\n";
     cin >> SI_mass;
     if (SI_mass == "001") {
-        cout << "Введите mass in gramms: ";
+        cout << "Введите массу в граммах: ";
         cin >> gramms;
         float mass_g_kg = gramms / 1000;
-        cout << "Ответ: " << mass_g_kg<< '\n';
+        cout << "Ответ: " << mass_g_kg<< "[кг]" << '\n';
     } else if (SI_mass == "002") {
-        cout << "Введите mass in kg: ";
+        cout << "Введите массу в кг: ";
         cin >> kg;
         float mass_kg_g = kg * 1000;
-        cout << "Ответ: " << mass_kg_g << '\n';
+        cout << "Ответ: " << mass_kg_g << "[г]" << '\n';
     } else {
-        cout << "Sorry" << '\n';
-    }
-}
-
-//Define a temp function;
-void temprature () {
-    string SI_temprature;
-    float celsius, farengeit, kelvin;
-    cout << "Введите из чего во что хотите перевести:\nCelsius in Kelvin:001\nKelvin in Celsius:002\nFarengeit in Kelvin:003\nKelvin in Farengeit:004\nCelsius in Farengeit:005" << '\n';
-    cin >> SI_temprature;
-    if (SI_temprature == "001") {
-        cout << "Введите temprature in celsius: ";
-        cin >> celsius;
-        float temprature_c_k = celsius + 273.15;
-        cout << "Ответ: " << temprature_c_k << '\n';
-    } else if (SI_temprature == "002") {
-        cout << "Введите temprature in Kelvin: ";
-        cin >> kelvin;
-        float temprature_k_c = kelvin - 273.15;
-        cout << "Ответ: " << temprature_k_c << '\n';
-    } else if (SI_temprature == "003") {
-        cout << "Введите temprature in Farengeit: ";
-        cin >> farengeit;
-        float temprature_f_k = (farengeit-32)*5/9 + 273.15;
-        cout << "Ответ: " << temprature_f_k << '\n';
-    } else if (SI_temprature == "004") {
-        cout << "Введите temprature in Kelvin: ";
-        cin >> kelvin;
-        float temprature_k_f = (kelvin-273.15)*9/5 + 32;
-        cout << "Ответ: " << temprature_k_f << '\n';
-    } else if (SI_temprature == "005") {
-        cout << "Введите temprature in celsius: ";
-        cin >> celsius;
-        float temprature_c_f = (celsius*9/5) + 32;
-        cout << "Ответ: " << temprature_c_f << '\n';
-    } else {
-        cout << "4o4" << '\n';
+        cout << "Error" << '\n';
     }
 }
 
@@ -528,18 +494,18 @@ void speed () {
     string SI_speed;
     float kmph, mps;
 
-    cout << "Введите из чего во что хотите перевести:\nкм/ч в м/с:001\nм/с в км/ч:002";
+    cout << "Введите из чего во что хотите перевести:\nкм/ч в м/с | 001\nм/с в км/ч | 002";
     cin >> SI_speed;
     if (SI_speed == "001") {
-        cout << "Введите speed in km/h: ";
+        cout << "Введите скорость в км/ч: ";
         cin >> kmph;
         float speed_kmph_mps = kmph / 3.6;
-        cout << "Ответ: " << speed_kmph_mps << '\n';
+        cout << "Ответ: " << speed_kmph_mps << "[м/с]" << '\n';
     } else if (SI_speed == "002") {
-        cout << "Введите speed in m/s: ";
+        cout << "Введите скорость в м/с: ";
         cin >> mps;
         float speed_mps_kmph = mps * 3.6;
-        cout << "Ответ: " << speed_mps_kmph << '\n';
+        cout << "Ответ: " << speed_mps_kmph << "[км/ч]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -552,15 +518,15 @@ void volume () {
     cout << "Введите из чего во что хотите перевести:\nсм3 в м3 | 001\nм3 в см3 | 002";
     cin >> SI_volume;
     if (SI_volume == "001") {
-        cout << "Введите volume in cm3: ";
+        cout << "Введите объём в cm^3: ";
         cin >> cm3;
         float volume_cm3_m3 = cm3 / 1000000;
-        cout << "Ответ: " << volume_cm3_m3 << '\n';
+        cout << "Ответ: " << volume_cm3_m3 << "[м3]" << '\n';
     } else if (SI_volume == "002") {
-        cout <<"Введите volume in m3: ";
+        cout <<"Введите объём в m^3: ";
         cin >> m3;
         float volume_m3_cm3 = m3 * 1000000;
-        cout << "Ответ: " << volume_m3_cm3 << '\n';
+        cout << "Ответ: " << volume_m3_cm3 << "[см3]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -597,19 +563,19 @@ void pressure_in_liquds () {
     if (unexpected == "h") {
         cout << "Введите ρ, P, g: ";
         cin >> ρ >> P >> g;
-        cout << "Анализ: h = P/ρg\nОтвет: h = " << P/ρ*g << '\n';
+        cout << "Анализ: h = P/ρg\nОтвет: h = " << P/ρ*g << "[м]" << '\n';
     } else if (unexpected == "ro") {
         cout << "Введите P, h";
         cin >> P >> h >> g;
-        cout << "Анализ: ρ = P/gh\nОтвет: ρ = " << P/g*h << '\n';
+        cout << "Анализ: ρ = P/gh\nОтвет: ρ = " << P/g*h << "[кг/м3]" << '\n';
     } else if (unexpected == "P") {
         cout << "Введите ρ, h, g: ";
         cin >> ρ >> h >> g;
-        cout << "Анализ: P = ρgh\nОтвет: P = " << ρ*g*h << '\n';
+        cout << "Анализ: P = ρgh\nОтвет: P = " << ρ*g*h << "[Па]" << '\n';
     } else if (unexpected == "g") {
         cout << "Введите ρ, P, h: ";
         cin >> ρ >> P >> h;
-        cout << "Anays: g = P/ρh\nОтвет: " << P/ρ*h << '\n';
+        cout << "Anays: g = P/ρh\nОтвет: " << P/ρ*h << "[м/с2]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -624,108 +590,108 @@ void gidravlical () {
     if (F_input == "F2") {
         cout << "Введите F1, S1, S2: ";
         cin >> F1 >> S1 >> S2;
-        cout << "Анализ: F2 = F1・S1:S2\nОтвет: F2 = " << F1*S1/S2 << "H" << '\n';
+        cout << "Анализ: F2 = F1・S1:S2\nОтвет: F2 = " << F1*S1/S2 << "[H]" << '\n';
     } else if (F_input == "F1") {
         cout << "Введите F2, S2, S1: ";
         cin >> F2 >> S2 >> S1;
-        cout << "Анализ: F1 = F2・S2:S1\nОтвет: F1 = " << F2*S2/S1 << "H" << '\n';
+        cout << "Анализ: F1 = F2・S2:S1\nОтвет: F1 = " << F2*S2/S1 << "[H]" << '\n';
     } else if (F_input == "S1") {
         cout << "Введите F1, F2, S2: ";
         cin >> F1 >> F2 >> S2;
-        cout << "Анализ: S1 = F2・S2:F1\nОтвет: S1 = " << F2*S2/F1 << "м2" << '\n';
+        cout << "Анализ: S1 = F2・S2:F1\nОтвет: S1 = " << F2*S2/F1 << "[м2]" << '\n';
     } else if (F_input == "S2") {
         cout << "Введите F1, F2, S1: ";
         cin >> F1 >> F2 >> S1;
         cout << "Введите F2: ";
-        cout << "Анализ: S2 = F1・S1:F2\nОтвет: S2 = " << F1*S1/F2 << "м2" << '\n';
+        cout << "Анализ: S2 = F1・S1:F2\nОтвет: S2 = " << F1*S1/F2 << "[м2]" << '\n';
     } else if (F_input == "h1") {
         cout << "Введите F1, h2, F2: ";
         cin >> F1 >> h2 >> F2;
-        cout << "Анализ: h1 = F2・h2:F1\nОтвет: h1 = " << F2*h2/F1 << "м" << '\n';
+        cout << "Анализ: h1 = F2・h2:F1\nОтвет: h1 = " << F2*h2/F1 << "[м]" << '\n';
     } else if (F_input == "h2") {
         cout << "Введите F1, F2, h1: ";
         cin >> F1 >> F2 >> h1;
-        cout << "Анализ: h2 = F1・h1:F2\nAnwer: h2 = " << F1*h1/F2 << "м" << '\n';
+        cout << "Анализ: h2 = F1・h1:F2\nAnwer: h2 = " << F1*h1/F2 << "[м]" << '\n';
     } else {
-        cout << "5o5" << '\n';
+        cout << "Error" << '\n';
     }
 }
 
 //Define a func of Communicating Vessels;
 void Communicating_Vessels () {
-    string неизвестный;
+    string unknown;
     float h2, p2, h1, p1;
 
     cout << "Введите неизвестный параметр (p1, h1, p2, h2): ";
-    cin >> неизвестный;
-    if (неизвестный == "p1") {
+    cin >> unknown;
+    if (unknown == "p1") {
         cout << "Введите h2, p2, h1: ";
         cin >> h2 >> p2 >> h1;
-        cout << "Анализ: p1 = h2・p2:h1\nОтвет: p1 = " << h2*p2/h1 << '\n';
-    } else if (неизвестный == "p2") {
+        cout << "Анализ: p1 = h2・p2:h1\nОтвет: p1 = " << h2*p2/h1 << "[кг/м3]" << '\n';
+    } else if (unknown == "p2") {
         cout << "Введите p1, h1, h2: ";
         cin >> p1 >> h1 >> h2;
-        cout << "Анализ: p2 = p1・h1:h2\nОтвет: p2 = " << p1*h1/h2 << '\n';
-    } else if (неизвестный == "h2") {
+        cout << "Анализ: p2 = p1・h1:h2\nОтвет: p2 = " << p1*h1/h2 << "[кг/м3]" << '\n';
+    } else if (unknown == "h2") {
         cout << "Введите p1, p2, h1: ";
         cin >> p1 >> p2 >> h1;
-        cout << "Анализ: h2 = p1・h1:p2\nОтвет: h2 = " << p1*h1/h2 << '\n';
-    } else if (неизвестный == "h1") {
+        cout << "Анализ: h2 = p1・h1:p2\nОтвет: h2 = " << p1*h1/h2 << "[м]" << '\n';
+    } else if (unknown == "h1") {
         cout << "Введите p1, p2, h2: ";
         cin >> p1 >> p2 >> h2;
-        cout << "Анализ: h1 = p2・h2:p1\nОтвет: h1 = " << p2*h2/p1 << '\n';
+        cout << "Анализ: h1 = p2・h2:p1\nОтвет: h1 = " << p2*h2/p1 << "[м]" << '\n';
     } else {
-        cout << "Something get wrong" << '\n';
+        cout << "Error" << '\n';
     }
 }
 
 void archimed () {
-    string неизвестный;
+    string unknown;
     float p, Fa, V;
 
     cout << "Введите неизвестный параметр (p, FA, V): ";
-    cin >> неизвестный;
-    if (неизвестный == "p") {
+    cin >> unknown;
+    if (unknown == "p") {
         cout << "Введите Fa(H): ";
         cin >> Fa;
         cout << "Введите V(м3): ";
         cin >> V;
-        cout << "Анализ: p = Fa:gV\nОтвет: p = " << Fa/10*V << "кг/м3" << '\n';
-    } else if (неизвестный == "Fa") {
+        cout << "Анализ: p = Fa:gV\nОтвет: p = " << Fa/10*V << "[кг/м3]" << '\n';
+    } else if (unknown == "Fa") {
         cout << "Введите p(кг/м3): ";
         cin >> p;
         cout << "Введите V(м3): ";
         cin >> V;
-        cout << "Анализ: Fa = ρgV\nОтвет: Fa = " << p*10*V << "H" << '\n';
-    } else if (неизвестный == "V") {
+        cout << "Анализ: Fa = ρgV\nОтвет: Fa = " << p*10*V << "[H]" << '\n';
+    } else if (unknown == "V") {
         cout << "Введите Fa(H): ";
         cin >> Fa;
         cout << "Введите p(кг/м3): ";
         cin >> p;
-        cout << "Анализ: V = Fa:ρg\nОтвет: V = " << Fa/p*10 << "м3" << '\n';
+        cout << "Анализ: V = Fa:ρg\nОтвет: V = " << Fa/p*10 << "[м3]" << '\n';
     } else {
         cout << "Error" << '\n';
     }
 }
 
 void potential_energy() {
-    string неизвестный;
+    string unknown;
     float m, h, Ep;
     cout << "Введите неизвестный параметр (m, h, Ep): ";
-    cin >> неизвестный;
-    if (неизвестный == "Ep") {
+    cin >> unknown;
+    if (unknown == "Ep") {
         cout << "Введите m(кг): ";
         cin >> m;
         cout << "Введите h(м): ";
         cin >> h;
         cout << "Анализ: Ep = mgh\nОтвет Ep = " << m*10*h << "[Дж]" << '\n';
-    } else if (неизвестный == "m") {
+    } else if (unknown == "m") {
         cout << "Введите Ep(Дж): ";
         cin >> Ep;
         cout << "Введите h(м): ";
         cin >> h;
         cout << "Анализ: m = Ep/gh\nОтвет m = " << Ep/10*h << '\n';
-    } else if (неизвестный == "h") {
+    } else if (unknown == "h") {
         cout << "Введите m(кг): ";
         cin >> m;
         cout << "Введите Ep(Дж): ";
@@ -738,23 +704,23 @@ void potential_energy() {
 }
 
 void elastic_deform() {
-    string неизвестный;
+    string unknown;
     float k, x, Ep;
     cout << "Введите неизвестный параметр (k, △x, Ep): ";
-    cin >> неизвестный;
-    if (неизвестный == "Ep") {
+    cin >> unknown;
+    if (unknown == "Ep") {
         cout << "Введите k(H/м): ";
         cin >> k;
         cout << "Введите △x(см): ";
         cin >> x;
         cout << "Анализ: Ep = k△x^2/2\nОтвет Ep = " << (k*pow(x, 2))/2 << "[Дж]" << '\n';
-    } else if (неизвестный == "k") {
+    } else if (unknown == "k") {
         cout << "Введите Ep(Дж): ";
         cin >> Ep;
         cout << "Введите △x(см): ";
         cin >> x;
         cout << "Анализ: k = 2・Ep/△x^2\nОтвет k = " << 2*Ep/pow(x, 2) << "[H/м]" << '\n';
-    } else if (неизвестный == "x") {
+    } else if (unknown == "x") {
         cout << "Введите Ep(Дж): ";
         cin >> Ep;
         cout << "Введите k(H/м): ";
@@ -794,38 +760,38 @@ void kinetic_energy() {
 }
 
 void law_of_energy_conservation() {
-    string неизвестный, yes_or_no;
+    string unknown, yes_or_no;
     float Ek, Ep, Em, V, h, m, g;
     cout << "Введите неизвестный параметр (Ek, Ep, Em, V, h, m, g): ";
-    cin >> неизвестный;
-    if (неизвестный == "Em") {
-        cout << "Do you know Ek and Ep?(y/n): ";
+    cin >> unknown;
+    if (unknown == "Em") {
+        cout << "Знаешь ли ты Еп и Ек?(y/n): ";
         cin >> yes_or_no;
-        if (yes_or_no == "y") {
+        if (yes_or_no == "y" || yes_or_no == "Y") {
             cout << "Введите Ek(Дж): ";
             cin >> Ek;
             cout << "Введите Ep(Дж): ";
             cin >> Ep;
-            cout << "Анализ: Em = Ek + Ep\nAnwer Em = " << Ek + Ep << "[Дж]" << '\n';
-        } else if (yes_or_no == "n") {
-            cout << "There kinetic energy" << '\n';
+            cout << "Анализ: Em = Ek + Ep\nОтвет: Em = " << Ek + Ep << "[Дж]" << '\n';
+        } else if (yes_or_no == "n" || yes_or_no == "N") {
+            cout << "Кинетическая энергия" << '\n';
             kinetic_energy();
-            cout << '\n' << "There potential energy" << '\n';
+            cout << '\n' << "Потенциальная энергия" << '\n';
             potential_energy();
         }
-    } else if (неизвестный == "V") {
+    } else if (unknown == "V") {
         cout << "Введите h(м): ";
         cin >> h;
         cout << "Введите g: ";
         cin >> g;
-        cout << "Анализ: √2gh\nAnwer V = " << sqrt(2*g*h) << "[м/с]" << '\n';
-    } else if (неизвестный == "h") {
+        cout << "Анализ: √2gh\nОтвет: V = " << sqrt(2*g*h) << "[м/с]" << '\n';
+    } else if (unknown == "h") {
         cout << "Введите V(м/с): ";
         cin >> V;
         cout << "Введите g: ";
         cin >> g;
         cout << "Анализ: h = V^2/2g\nОтвет h = " << pow(V, 2)/2*g << "[м]" << '\n';
     } else {
-        cout << "There a take" << '\n';
+        cout << "Error" << '\n';
     }
 }
