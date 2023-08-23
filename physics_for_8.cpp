@@ -64,6 +64,9 @@ int main() {
                 cout << "'Оптическая сила линзы'\n";
                 Optical_power_of_the_lens();
                 break;
+            default:
+                cout << "Неверное значение\n";
+                break;
         }
         cout << "\n\n";
 	}
