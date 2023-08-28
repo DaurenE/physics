@@ -193,19 +193,23 @@ void inertia () {
     if (formula == "m1") {
         cout << "Введите m2, v1, v2: " << '\n';
         cin >> m2 >> v1 >> v2;
-        cout << "m1 = " << m2*v2/v1 << '\n';
+        cout << "Анализ: m1 = m2*v2:v1\n";
+        cout << "Ответ: m1 = " << m2*v2/v1 << '\n';
     } else if (formula == "m2") {
         cout << "Введите m1, v1, v2: " << '\n';
         cin >> m1 >> v1 >> v2;
-        cout << "m2 = " << m1*v1/v2 << '\n';
+        cout << "Анализ: m2 = m1*v1:v2\n";
+        cout << "Ответ: m2 = " << m1*v1/v2 << '\n';
     } else if (formula == "v1") {
         cout << "Введите m2, v2, m1: " << '\n';
         cin >> m2 >> v2 >> m1;
-        cout << "v1 = " << m2*v2/m1 << '\n';
+        cout << "Анализ: v1 = m2*v2:m1\n";
+        cout << "Ответ: v1 = " << m2*v2/m1 << '\n';
     } else if (formula == "v2") {
         cout << "Введите m1, v1, m2: " << '\n';
         cin >> m1 >> v1 >> m2;
-        cout << "v2 = " << m1*v1/m2 << '\n';
+        cout << "Анализ: v2 = m1*v1:m2\n";
+        cout << "Ответ: v2 = " << m1*v1/m2 << '\n';
     } else {
         cout << "Error" << '\n';
     }
@@ -220,17 +224,13 @@ void average_speed () {
     cout << "Введите S2(м): " << '\n';
     cin >> S2;
     if (S1 == S2) {
-        cout << "Введите V1(м/с): " << '\n';
-        cin >> V1;
-        cout << "Введите V2(м/с): " << '\n';
-        cin >> V2;
+        cout << "Введите V1(м/с) V2(м/с): " << '\n';
+        cin >> V1 >> V2;
         cout << "Анализ: 2・V1・V2 : V1 + V2" << '\n';
         cout << "Vср = " << 2*V1*V2 / (V1+V2) << '\n';
     } else if (S1 != S2) {
-        cout << "Введите t1(сек): " << '\n';
-        cin >> t1;
-        cout << "Введите t2(сек): " << '\n';
-        cin >> t2;
+        cout << "Введите t1(сек) t2(сек): " << '\n';
+        cin >> t1 >> t2;
         cout << "Анализ: S1 + S2/t1 + t2" << '\n';
         cout << "Ответ: " << (S1+S2)/(t1+t2) << '\n';
     } else {
@@ -277,16 +277,12 @@ void gravity () {
     cout << "Введите неизвестный параметр (F, m, g)" << '\n';
     cin >> formula;
     if (formula == "F") {
-        cout << "Введите m(кг): " << '\n';
-        cin >> m;
-        cout << "Введите g(м/с): " << '\n';
-        cin >> g;
+        cout << "Введите m(кг) g(м/с2): ";
+        cin >> m >> g;
         cout << "Анализ: F = mg\nОтвет: F = " << m*g << "[H]" << '\n';
     } else if (formula == "m") {
-        cout << "Введите F(H): " << '\n';
-        cin >> F;
-        cout << "Введите g(м/с): " << '\n';
-        cin >> g;
+        cout << "Введите F(H) g(м/с2): " << '\n';
+        cin >> F >> g;
         cout << "Анализ: m = F:g\nОтвет: m = " << F/g << "[кг]" << '\n';
     } else if (formula == "g") {
         cout << "Введите F , m: ";
@@ -649,25 +645,19 @@ void archimed () {
     string unknown;
     float p, Fa, V;
 
-    cout << "Введите неизвестный параметр (p, FA, V): ";
+    cout << "Ускорение свободногго падения (g) ~ 10\nВведите неизвестный параметр (p, FA, V): ";
     cin >> unknown;
     if (unknown == "p") {
-        cout << "Введите Fa(H): ";
-        cin >> Fa;
-        cout << "Введите V(м3): ";
-        cin >> V;
+        cout << "Введите Fa(H) V(м3): ";
+        cin >> Fa >> V;
         cout << "Анализ: p = Fa:gV\nОтвет: p = " << Fa/10*V << "[кг/м3]" << '\n';
     } else if (unknown == "Fa") {
-        cout << "Введите p(кг/м3): ";
-        cin >> p;
-        cout << "Введите V(м3): ";
-        cin >> V;
+        cout << "Введите p(кг/м3) V(м3): ";
+        cin >> p >> V;
         cout << "Анализ: Fa = ρgV\nОтвет: Fa = " << p*10*V << "[H]" << '\n';
     } else if (unknown == "V") {
-        cout << "Введите Fa(H): ";
-        cin >> Fa;
-        cout << "Введите p(кг/м3): ";
-        cin >> p;
+        cout << "Введите Fa(H) p(кг/м3): ";
+        cin >> Fa >> p;
         cout << "Анализ: V = Fa:ρg\nОтвет: V = " << Fa/p*10 << "[м3]" << '\n';
     } else {
         cout << "Error" << '\n';
@@ -680,25 +670,19 @@ void potential_energy() {
     cout << "Введите неизвестный параметр (m, h, Ep): ";
     cin >> unknown;
     if (unknown == "Ep") {
-        cout << "Введите m(кг): ";
-        cin >> m;
-        cout << "Введите h(м): ";
-        cin >> h;
+        cout << "Введите m(кг) h(м): ";
+        cin >> m >> h;
         cout << "Анализ: Ep = mgh\nОтвет Ep = " << m*10*h << "[Дж]" << '\n';
     } else if (unknown == "m") {
-        cout << "Введите Ep(Дж): ";
-        cin >> Ep;
-        cout << "Введите h(м): ";
-        cin >> h;
+        cout << "Введите Ep(Дж) h(м): ";
+        cin >> Ep >> h;
         cout << "Анализ: m = Ep/gh\nОтвет m = " << Ep/10*h << '\n';
     } else if (unknown == "h") {
-        cout << "Введите m(кг): ";
-        cin >> m;
-        cout << "Введите Ep(Дж): ";
-        cin >> Ep;
+        cout << "Введите m(кг) Ep(Дж): ";
+        cin >> m >> Ep;
         cout << "Анализ: h = Ep/mg\nОтвет h = " << Ep/m*10 << '\n';
     } else {
-        cout << "Sorry" << '\n';
+        cout << "Error" << '\n';
     }
 
 }
@@ -709,53 +693,41 @@ void elastic_deform() {
     cout << "Введите неизвестный параметр (k, △x, Ep): ";
     cin >> unknown;
     if (unknown == "Ep") {
-        cout << "Введите k(H/м): ";
-        cin >> k;
-        cout << "Введите △x(см): ";
-        cin >> x;
+        cout << "Введите k(H/м) △x(см): ";
+        cin >> k >> x;
         cout << "Анализ: Ep = k△x^2/2\nОтвет Ep = " << (k*pow(x, 2))/2 << "[Дж]" << '\n';
     } else if (unknown == "k") {
-        cout << "Введите Ep(Дж): ";
-        cin >> Ep;
-        cout << "Введите △x(см): ";
-        cin >> x;
+        cout << "Введите Ep(Дж) △x(см): ";
+        cin >> Ep >> x;
         cout << "Анализ: k = 2・Ep/△x^2\nОтвет k = " << 2*Ep/pow(x, 2) << "[H/м]" << '\n';
     } else if (unknown == "x") {
-        cout << "Введите Ep(Дж): ";
-        cin >> Ep;
-        cout << "Введите k(H/м): ";
-        cin >> k;
+        cout << "Введите Ep(Дж) k(H/м): ";
+        cin >> Ep >> k;
         cout << "Анализ: △x = √2・Ep/k\nОтвет △x = " << sqrt(2*Ep/k) << "[см]" << '\n';
     } else {
-        cout << "you made a take in one " << '\n';
+        cout << "Error" << '\n';
     }
 }
 
 void kinetic_energy() {
-    string not_given;
+    string unknown;
     float m, V, Ek;
     cout << "Введите неизвестный параметр (m, V, Ek): ";
-    cin >> not_given;
-    if (not_given == "Ek") {
-        cout << "Введите m(кг): ";
-        cin >> m;
-        cout << "Введите V(м/с): ";
-        cin >> V;
+    cin >> unknown;
+    if (unknown == "Ek") {
+        cout << "Введите m(кг) V(м/с): ";
+        cin >> m >> V;
         cout << "Анализ: Ek = m・V^2/2\nОтвет Ek = " << (m*pow(V, 2))/2 << "[Дж]" << '\n';
-    } else if (not_given == "m") {
-        cout << "Введите Ek(Дж): ";
-        cin >> Ek;
-        cout << "Введите V(м/с): ";
-        cin >> V;
+    } else if (unknown == "m") {
+        cout << "Введите Ek(Дж) V(м/с): ";
+        cin >> Ek >> V;
         cout << "Анализ: m = 2・Ek/V^2\nОтвет m = " << 2*Ek/pow(V, 2) << "[кг]" << '\n';
-    } else if (not_given == "V") {
-        cout << "Введите Ek(Дж): ";
-        cin >> Ek;
-        cout << "Введите m(кг): ";
-        cin >> m;
+    } else if (unknown == "V") {
+        cout << "Введите Ek(Дж) m(кг): ";
+        cin >> Ek >> m;
         cout << "Анализ: V = 2・Ek/m\nОтвет V = " << sqrt(2*Ek/m) << "[м/c]" << '\n';
     } else {
-        cout << "There a take" << '\n';
+        cout << "Error" << '\n';
     }
 }
 
@@ -780,16 +752,12 @@ void law_of_energy_conservation() {
             potential_energy();
         }
     } else if (unknown == "V") {
-        cout << "Введите h(м): ";
-        cin >> h;
-        cout << "Введите g: ";
-        cin >> g;
+        cout << "Введите h(м) g(м/с2): ";
+        cin >> h >> g;
         cout << "Анализ: √2gh\nОтвет: V = " << sqrt(2*g*h) << "[м/с]" << '\n';
     } else if (unknown == "h") {
-        cout << "Введите V(м/с): ";
-        cin >> V;
-        cout << "Введите g: ";
-        cin >> g;
+        cout << "Введите V(м/с) g(м/с2): ";
+        cin >> V >> g;
         cout << "Анализ: h = V^2/2g\nОтвет h = " << pow(V, 2)/2*g << "[м]" << '\n';
     } else {
         cout << "Error" << '\n';
