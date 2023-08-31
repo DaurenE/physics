@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up CMake
+      uses: actions/setup-cmake@v2
+      with:
+        cmake-version: '3.21'
+
+    - name: Build and Test
+      run: |
+        mkdir build
+        cd build
+        cmake ..
+        make
+        make test
