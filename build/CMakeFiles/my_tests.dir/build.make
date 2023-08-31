@@ -69,28 +69,28 @@ include CMakeFiles/my_tests.dir/progress.make
 # Include the compile flags for this target's objects.
 include CMakeFiles/my_tests.dir/flags.make
 
-CMakeFiles/my_tests.dir/tests/test_file.cpp.o: CMakeFiles/my_tests.dir/flags.make
-CMakeFiles/my_tests.dir/tests/test_file.cpp.o: ../tests/test_file.cpp
-CMakeFiles/my_tests.dir/tests/test_file.cpp.o: CMakeFiles/my_tests.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dauren/physics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_tests.dir/tests/test_file.cpp.o"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_tests.dir/tests/test_file.cpp.o -MF CMakeFiles/my_tests.dir/tests/test_file.cpp.o.d -o CMakeFiles/my_tests.dir/tests/test_file.cpp.o -c /home/dauren/physics/tests/test_file.cpp
+CMakeFiles/my_tests.dir/test_file.cpp.o: CMakeFiles/my_tests.dir/flags.make
+CMakeFiles/my_tests.dir/test_file.cpp.o: ../test_file.cpp
+CMakeFiles/my_tests.dir/test_file.cpp.o: CMakeFiles/my_tests.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=/home/dauren/physics/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/my_tests.dir/test_file.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/my_tests.dir/test_file.cpp.o -MF CMakeFiles/my_tests.dir/test_file.cpp.o.d -o CMakeFiles/my_tests.dir/test_file.cpp.o -c /home/dauren/physics/test_file.cpp
 
-CMakeFiles/my_tests.dir/tests/test_file.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_tests.dir/tests/test_file.cpp.i"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dauren/physics/tests/test_file.cpp > CMakeFiles/my_tests.dir/tests/test_file.cpp.i
+CMakeFiles/my_tests.dir/test_file.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/my_tests.dir/test_file.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E /home/dauren/physics/test_file.cpp > CMakeFiles/my_tests.dir/test_file.cpp.i
 
-CMakeFiles/my_tests.dir/tests/test_file.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_tests.dir/tests/test_file.cpp.s"
-	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dauren/physics/tests/test_file.cpp -o CMakeFiles/my_tests.dir/tests/test_file.cpp.s
+CMakeFiles/my_tests.dir/test_file.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/my_tests.dir/test_file.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S /home/dauren/physics/test_file.cpp -o CMakeFiles/my_tests.dir/test_file.cpp.s
 
 # Object files for target my_tests
 my_tests_OBJECTS = \
-"CMakeFiles/my_tests.dir/tests/test_file.cpp.o"
+"CMakeFiles/my_tests.dir/test_file.cpp.o"
 
 # External object files for target my_tests
 my_tests_EXTERNAL_OBJECTS =
 
-my_tests: CMakeFiles/my_tests.dir/tests/test_file.cpp.o
+my_tests: CMakeFiles/my_tests.dir/test_file.cpp.o
 my_tests: CMakeFiles/my_tests.dir/build.make
 my_tests: /usr/lib/x86_64-linux-gnu/libgtest.a
 my_tests: /usr/lib/x86_64-linux-gnu/libgtest_main.a
