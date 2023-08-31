@@ -1,0 +1,4 @@
+/home/dauren/physics/build/CMakeFiles/my_tests.dir
+/home/dauren/physics/build/CMakeFiles/test.dir
+/home/dauren/physics/build/CMakeFiles/edit_cache.dir
+/home/dauren/physics/build/CMakeFiles/rebuild_cache.dir
