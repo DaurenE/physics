@@ -1,34 +1,45 @@
 #include <gtest/gtest.h>
+#include <gmock/gmock.h>
 #include <iostream>
 #include <sstream>
 #include "physics_for_7.cpp"
+
+using namespace testing;
 
 class MechanicalWorkTest : public ::testing::Test {
 protected:
     void SetUp() override {
         // Подготовка для каждого тестового случая
-        original_cin = std::cin.rdbuf(); // Сохраняем оригинальный stdin
-        input_stream.str(""); // Очищаем input_stream
+        ::testing::internal::CaptureStdout(); // Захватывает стандартный вывод
     }
 
     void TearDown() override {
         // Очистка после каждого тестового случая
-        std::cin.rdbuf(original_cin); // Восстанавливаем оригинальный stdin
+        ::testing::internal::GetCapturedStdout(); // Получает захваченный вывод
     }
+};
 
-    std::streambuf* original_cin;
-    std::stringstream input_stream;
+class MockInputStream : public IInputStream {
+public:
+    MOCK_METHOD(std::string, GetLine, (), (override));
 };
 
 TEST_F(MechanicalWorkTest, TestA) {
-    // Подготовка данных для ввода
-    input_stream.str("A\n5 2\n"); // Ввод "A", затем "5 2"
-    std::cin.rdbuf(input_stream.rdbuf()); // Перенаправляем stdin на input_stream
+    // Создание мок-объекта для эмуляции ввода
+    MockInputStream mockInput;
+    EXPECT_CALL(mockInput, GetLine())
+        .WillOnce(Return("A"))
+        .WillOnce(Return("5 2"));
 
     // Подготовка данных для ожидаемого вывода
     std::string expected_output = "A = 2.5[Дж]\n";
 
-    ::testing::internal::CaptureStdout(); // Захватывает стандартный вывод
+    // Перенаправление ввода и вывода
+    ::testing::internal::CaptureStdin();
+    ::testing::internal::CaptureStdout();
+
+    // Заменяем стандартный поток ввода на мок-объект
+    SetInputStream(&mockInput);
 
     // Вызываем функцию
     mechanical_work();
@@ -41,6 +52,6 @@ TEST_F(MechanicalWorkTest, TestA) {
 }
 
 int main(int argc, char** argv) {
-    ::testing::InitGoogleTest(&argc, argv);
+    ::testing::InitGoogleMock(&argc, argv);
     return RUN_ALL_TESTS();
 }
