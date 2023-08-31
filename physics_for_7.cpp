@@ -23,7 +23,7 @@ void potential_energy();
 void kinetic_energy();
 void elastic_deform();
 void law_of_energy_conservation();
-
+/*
 int main() {
     while (true) {
         string main_task;
@@ -122,6 +122,7 @@ int main() {
     }
     return 0;
 }
+*/
 
 void mechanical_work() {
     float A, N, t, F, V;

@@ -139,29 +139,29 @@ my_tests/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/build
 .PHONY : my_tests/fast
 
-tests/test_file.o: tests/test_file.cpp.o
-.PHONY : tests/test_file.o
+test_file.o: test_file.cpp.o
+.PHONY : test_file.o
 
 # target to build an object file
-tests/test_file.cpp.o:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/test_file.cpp.o
-.PHONY : tests/test_file.cpp.o
+test_file.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/test_file.cpp.o
+.PHONY : test_file.cpp.o
 
-tests/test_file.i: tests/test_file.cpp.i
-.PHONY : tests/test_file.i
+test_file.i: test_file.cpp.i
+.PHONY : test_file.i
 
 # target to preprocess a source file
-tests/test_file.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/test_file.cpp.i
-.PHONY : tests/test_file.cpp.i
+test_file.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/test_file.cpp.i
+.PHONY : test_file.cpp.i
 
-tests/test_file.s: tests/test_file.cpp.s
-.PHONY : tests/test_file.s
+test_file.s: test_file.cpp.s
+.PHONY : test_file.s
 
 # target to generate assembly for a file
-tests/test_file.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/tests/test_file.cpp.s
-.PHONY : tests/test_file.cpp.s
+test_file.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/my_tests.dir/build.make CMakeFiles/my_tests.dir/test_file.cpp.s
+.PHONY : test_file.cpp.s
 
 # Help Target
 help:
@@ -173,9 +173,9 @@ help:
 	@echo "... rebuild_cache"
 	@echo "... test"
 	@echo "... my_tests"
-	@echo "... tests/test_file.o"
-	@echo "... tests/test_file.i"
-	@echo "... tests/test_file.s"
+	@echo "... test_file.o"
+	@echo "... test_file.i"
+	@echo "... test_file.s"
 .PHONY : help
 
 

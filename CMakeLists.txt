@@ -6,5 +6,5 @@ enable_testing()
 find_package(GTest REQUIRED)
 
 # Добавление тестов
-add_executable(my_tests tests/test_file.cpp)
+add_executable(my_tests test_file.cpp)
 target_link_libraries(my_tests GTest::gtest GTest::Main)
