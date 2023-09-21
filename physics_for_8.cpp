@@ -82,7 +82,7 @@ void translation_to_temprature () {
         float temprature_c_k = celsius + 273.15;
         cout << "Ответ: " << temprature_c_k << endl;
     } else if (SI_temprature == "002") {
-        cout << "Введите температуру в Келвинах: ";
+        cout << "Введите температуру в Келвинах ( > 0 ): ";
         cin >> kelvin;
         float temprature_k_c = kelvin - 273.15;
         cout << "Ответ: " << temprature_k_c << "°" << endl;
@@ -92,7 +92,7 @@ void translation_to_temprature () {
         float temprature_f_k = (farengeit-32)*5/9 + 273.15;
         cout << "Ответ: " << temprature_f_k << endl;
     } else if (SI_temprature == "004") {
-        cout << "Введите температуру в Келвинах: ";
+        cout << "Введите температуру в Келвинах ( > 0 ): ";
         cin >> kelvin;
         float temprature_k_f = (kelvin-273.15)*9/5 + 32;
         cout << "Ответ: " << temprature_k_f << endl;
