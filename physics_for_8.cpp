@@ -279,13 +279,13 @@ void current_strength () {
     string formula;
     cout << "Введите неизвестный параметр (U, I, R, P): " << endl;
     cin >> formula;
-    if (formula == "U") {
+    if (formula == "U" || "u") {
         voltage();
-    } else if (formula == "I") {
+    } else if (formula == "I" || "i") {
         current_s();
-    } else if (formula == "R") {
+    } else if (formula == "R" || "r") {
         resistance();
-    } else if (formula == "P") {
+    } else if (formula == "P" || "p") {
         power();
     } else {
         cout << "Error\n";
@@ -297,9 +297,9 @@ void current_strength () {
 void state_of_aggregation () {
     float lambda, Q, m, phi, rho, rho0;
     string unknown, answer;
-    cout << "Введите неизвестный параметр (λ-lambda, Q, m\nφ-phi, ρ-rho, l):\n";
+    cout << "Введите неизвестный параметр (λ-lam, Q, m\nφ - f, ρ - r, l):\n";
     cin >> unknown;
-    if (unknown == "lambda") {
+    if (unknown == "lam") {
         cout << "Введите Q, m: ";
         cin >> Q, m;
         answer = Q/m;
@@ -374,28 +374,28 @@ void Optical_power_of_the_lens() {
     }
 }
 /*
-Α	α	    alpha      a --> father
+Α	α	    alpha      a
 Β	β	    beta       b
 Γ	γ	    gamma      g
 Δ	δ	    delta      d
-Ε	ε	    epsilon    e --> end
+Ε	ε	    epsilon    e
 Ζ	ζ	    zêta       z
-Η	η	    êta        ê --> hey
-Θ	θ	    thêta      th --> thick
-Ι	ι	    iota       i --> it
+Η	η	    êta        ê
+Θ	θ	    thêta      th
+Ι	ι	    iota       i
 Κ	κ    	kappa      k
 Λ	λ	    lambda     l
 Μ	μ	    mu         m
 Ν	ν    	nu         n
-Ξ	ξ	    xi         ks --> box
-Ο	ο	    omikron    o --> off
+Ξ	ξ	    xi         ks
+Ο	ο	    omikron    o
 Π	π	    pi         p
 Ρ	ρ	    rho        r
-Σ	σ, ς    sigma      s --> say
+Σ	σ, ς    sigma      s
 Τ	τ    	tau        t
-Υ	υ	    upsilon    u --> put
+Υ	υ	    upsilon    u
 Φ	φ	    phi        f
-Χ	χ	    chi        ch --> Bach
+Χ	χ	    chi        ch
 Ψ	ψ	    psi        ps
-Ω	ω	    omega      ô --> grow
+Ω	ω	    omega      ô
 */
